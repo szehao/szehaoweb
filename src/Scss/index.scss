@@ -1,0 +1,261 @@
+/*=========================
+  Variables   			  =
+==========================*/
+$white 			: #FFFFFF;
+$black			: #000000;
+$primaryColor 	: #DF462B;
+$secondaryColor : #DD8D2B;
+
+$primaryFont 	: Poly, sans-serif;
+$secondaryFont  : Raleway, sans-serif;
+
+/*=========================
+  GLOBAL	   			  =
+==========================*/
+html{
+	scroll-behavior: smooth;
+}
+
+html,body, #root{height:100%;}
+
+section{position: relative;}
+
+.button{
+	border:2px solid;
+	padding:8px 20px;
+}
+
+.main-container{height:100%;}
+
+.sub-title{
+	font-size: 20pt;
+	font-weight: bold;
+	font-family: $secondaryFont;
+	margin-top: 20px;
+}
+
+.sub-title-underline{
+	width:50px;
+	height:2.5px;
+	background-color: $black;
+	margin-bottom: 12px;
+}
+/*=========================
+  HOME 		  			  =
+==========================*/
+.app-container{
+	height:100%;
+	overflow-x:hidden;
+}
+
+#canvas-container{
+	position: absolute;
+	top:0;
+	left:0;
+	height:100vh;
+}
+
+#home{
+	height:100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #171717;
+}
+
+.flex-container{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	margin: 0 auto;
+	z-index: 1;
+
+	.welcome-text{
+		color : $white;
+		text-align:center;
+		font-size: 32pt;
+		font-family: $primaryFont;
+		line-height: 40pt;
+		margin-bottom: 17px;
+
+		span{color:$primaryColor;}
+	}
+
+	.home-button{
+		color: $white;
+		font-size:22pt;
+		font-family: $primaryFont;
+		font-style: normal;
+		font-weight: 300;
+		cursor: pointer;
+		transition: 0.5s ease;
+		&:hover{
+			border-color: $secondaryColor;
+			transition: 0.5s ease;
+			background-color: $secondaryColor;
+
+			.arrow-right{
+				transition: 0.5s ease;
+				transform: rotate(90deg);
+			}
+		}
+
+		.arrow-right{
+			display: inline-block;
+			font-size: 16pt;
+			margin-left:10px;
+			transition: 0.5s ease;
+			&::before{
+				content: '\279C' 
+			}
+		}
+	}
+}
+
+/*=========================
+  HEADER 	  			  =
+==========================*/
+header{
+	background-color: $black;
+	z-index: 2;
+	nav{
+		border-bottom:3px solid $secondaryColor;
+		ul{
+			list-style-type: none;
+
+			li{
+				color: $white;
+				font-family: $primaryFont;
+				display: inline-block;
+				padding:15px 20px;
+			}
+
+			.active{
+				color : $primaryColor;
+			}
+
+            .nav-icon{
+                display:none;
+            }
+		}
+	}
+}
+
+
+/*=========================
+  ABOUT 	  			  =
+==========================*/
+#about{
+	height:100%;
+}
+
+.about-text{
+	font-family: $secondaryFont;
+	text-align: center;
+}
+
+
+/*=========================
+  MEDIA QUERIES			  =
+==========================*/
+
+@media only screen and (min-width: 320px) and (max-width: 425px){
+	
+	.sub-title{
+		font-size: 20pt;
+		font-weight: bold;
+		font-family: $secondaryFont;
+		margin-top: 20px;
+	}
+
+	.sub-title-underline{
+		width:50px;
+		height:2.5px;
+		background-color: black;
+	}
+	/*=====================
+	=  HEADER 		  	  =
+	=====================*/
+	header{
+		position: fixed;
+		bottom:0;
+		width:100%;
+		text-align: center;
+		background-color: white;
+		nav{
+			border-top:1px solid #DEDEDE;
+			border-bottom:none;
+			ul{
+				li{
+					color : #7D7D7D;
+					font-size:8pt;
+					padding:12px 10px;
+				}
+
+				.active{
+					color : $black;
+
+					.nav-icon{
+                        display: block;
+                        margin: 0 auto 3px auto;
+                        fill : #7D7D7D;
+						fill:$black;
+					}
+				}
+			}
+		}
+	}
+
+	/*=====================
+	=  HOME 		  	  =
+	=====================*/
+	.flex-container{
+		.welcome-text{
+			font-size: 18pt;
+			line-height: 20pt;
+		}
+
+		.home-button{
+			font-size: 15pt;
+		}
+	}
+
+	/*=====================
+	=  ABOUT 		  	  =
+	=====================*/
+
+}
+
+/*=========================
+  FONT-FACE   			  =
+==========================*/
+
+@font-face{
+	font-family: Poly;
+	src: url(../Fonts/Poly-Regular.otf);
+}
+
+@font-face{
+	font-family: Grenze;
+	src: url(../Fonts/Grenze-Regular.ttf);
+}
+
+@font-face{
+	font-family: Lora;
+	src: url(../Fonts/Lora-Regular.otf);
+}
+
+@font-face{
+	font-family: Raleway;
+	font-weight: normal;
+	src: url(../Fonts/Raleway-Regular.ttf);
+}
+
+@font-face{
+	font-family: Raleway;
+	font-weight: bold;
+	src: url(../Fonts/Raleway-Bold.ttf);
+}
