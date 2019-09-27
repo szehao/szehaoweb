@@ -20,7 +20,7 @@ class AnimateCanvas extends React.Component {
         maxSpeed : .5,
         fps : 60,
         numParticles : 75,
-        width : window.innerWidth * 0.989,
+        width : window.innerWidth,
         height : window.innerHeight
     };
     /*
@@ -40,7 +40,7 @@ class AnimateCanvas extends React.Component {
   
   handleResize(){
       this.setState({
-         width: window.innerWidth *0.989,
+         width: window.innerWidth,
          height: window.innerHeight,
       })
   }
