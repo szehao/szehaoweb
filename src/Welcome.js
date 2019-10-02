@@ -10,12 +10,13 @@ export default class Welcome extends React.Component{
 					Hello, I'm <span>Sze Hao</span>.
 					<br/>I'm a student / developer.
 				</div>
+
 				<Link
                     activeClass="active"
                     to="about"
                     spy={true}
                     smooth={true}
-                    offset={15}
+                    offset={1}
                     duration={250}
                 >
 	                <div className="button home-button">

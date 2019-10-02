@@ -13,6 +13,8 @@ export default class AppTest extends React.Component{
 		super(props);
 		this.state = {
 			className : "",
+			display : "",
+			curPage : "home"
 		};
 	}
 
@@ -21,17 +23,37 @@ export default class AppTest extends React.Component{
 				<main>
 					<section id="home">
 						<IntersectionVisible
+							active={this.state.active}
 							className="flex-container"
-							onHide={() => {this.setState({className : "fixed"})}}
-							onShow={() => {this.setState({className : ""})}}
+							onHide={() => {window.innerWidth < 427 ? 
+								this.setState({display : "block", curPage : ""}) :
+								this.setState({className : "fixed"})
+							}}
+							onShow={() => {window.innerWidth < 427 ? 
+								this.setState({curPage : "home"}) :
+								this.setState({className : ""})
+							}}
 						>
 							<AnimateCanvas />
 							<Welcome />
 						</IntersectionVisible>
-						<Header className={this.state.className}/>
+						<Header className={this.state.className} style={this.state.display}/>
 					</section>
 					<section id="about">
+						<IntersectionVisible
+							onHide={() => {
+								if(window.innerWidth < 427 && this.state.curPage === "home"){
+								this.setState({display : "none"})
+								}
+							}}
+							onShow={() => {
+								if(window.innerWidth < 427){
+									this.setState({display: "block"})
+								}
+							}}
+						>
 						<About />
+						</IntersectionVisible>
 					</section>
 					<section id="portfolio">
 					</section>

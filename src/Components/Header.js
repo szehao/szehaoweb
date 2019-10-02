@@ -5,7 +5,7 @@ export default class Header extends React.Component{
 
     render(){
         return(
-            <header className={this.props.className}>
+            <header className={this.props.className} style={{display : this.props.style}}>
                 <nav>
                     <ul>
                         <li>            

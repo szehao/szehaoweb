@@ -3,8 +3,8 @@
 ==========================*/
 $white 			: #FFFFFF;
 $black			: #000000;
-$primaryColor 	: #DF462B;
-$secondaryColor : #DD8D2B;
+$primaryColor 	: #1D252D;
+$secondaryColor : #DF462B;
 
 $primaryFont 	: Poly, sans-serif;
 $secondaryFont  : Raleway, sans-serif;
@@ -24,8 +24,6 @@ section{position: relative;}
 	border:2px solid;
 	padding:8px 20px;
 }
-
-.main-container, .container{height:100%;}
 
 .sub-title{
 	font-size: 20pt;
@@ -48,10 +46,6 @@ section{position: relative;}
 	overflow-x:hidden;
 }
 
-.home-container{
-	height:108%;
-}
-
 #canvas-container{
 	position: absolute;
 	top:0;
@@ -65,7 +59,7 @@ section{position: relative;}
 }
 
 #home{
-	background-color: #171717;
+	background-color: $primaryColor;
 	display: flex;
 	height: calc(100vh + 59px);
 }
@@ -88,7 +82,7 @@ section{position: relative;}
 		line-height: 40pt;
 		margin-bottom: 17px;
 
-		span{color:$primaryColor;}
+		span{color:$secondaryColor;}
 	}
 
 	.home-button{
@@ -132,7 +126,7 @@ section{position: relative;}
     bottom:0;
 }
 
-@keyframes popDown{
+@keyframes animtateDown{
 	0%{
 		transform : translateY(-50px);
 	}
@@ -146,19 +140,19 @@ header{
 	z-index: 2;
     height:60px;
   	nav{
-		border-bottom:4px solid $secondaryColor;
+		border-bottom:4px solid #ff7e58;
 		ul{
 			list-style-type: none;
 
 			li{
 				color: $white;
-				font-family: $primaryFont;
+				font-family: $secondaryFont;
 				display: inline-block;
 				padding:20px 20px;
 			}
 
 			.active{
-				color : $primaryColor;
+				color : $secondaryColor;
 			}
 
             .nav-icon{
@@ -172,8 +166,9 @@ header{
     position: fixed;
     width:100%;
     top:0;
-    animation : popDown .5s;
+    animation : animtateDown .5s;
 }
+
 /*=========================
   ABOUT 	  			  =
 ==========================*/
@@ -181,17 +176,97 @@ header{
 	height: 100vh;
 
 	.about-container{
-		justify-content: initial;
+		justify-content: space-around;
+		display:flex;
+		flex-direction: row;
+
+		.about-left-container{
+			width:40%;
+			height:50%;
+			border-right:1px solid $primaryColor;
+
+			.title{
+				font-family:$secondaryFont;
+				font-weight:bolder;
+				font-size:50pt;
+				color:$primaryColor;
+			}
+
+			.short-description{
+				margin-top:15px;
+				width:66%;
+				font-family:$secondaryFont;
+				font-weight:lighter;
+			}
+
+			.icon-container{
+				margin-top:25px;
+				display:flex;
+				flex-direction: row;
+				width:18%;
+				justify-content: space-between;
+			}
+
+			.about-button{
+				width:30%;
+				text-align: center;
+				background-color: #FC7A5D;
+				border:none;
+				font-family: $primaryFont;
+				font-size:16pt;
+				color:$white;
+				border-radius:5px;
+				padding:20px 30px;
+				box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 2px 2px 2px 0 rgba(0, 0, 0, 0.3);
+				margin-top:30px;
+				cursor: pointer;
+				transition:all 0.3s ease;
+
+				&:hover{
+					background-color: #ff5f3b;
+				}
+			}
+		}
+
+		.about-right-container{
+			width:40%;
+			height:50%;
+
+			.title{
+				font-family:$secondaryFont;
+				font-weight:bolder;
+				font-size:50pt;
+				color:$primaryColor;
+			}
+
+			.skills-container{
+				width:60%;
+				border-bottom:1px solid $primaryColor;
+				
+				.skill-title{
+					font-family:$secondaryFont;
+					font-weight:bold;
+					font-size:16pt;
+					color:$primaryColor;
+					margin-top:15px;
+				}
+				
+				.skill{
+					font-family:$secondaryFont;
+					font-weight:normal;
+					font-size:10pt;
+					color:$black;
+					margin-top:2px;
+					margin-bottom:15px;
+				}
+				
+				&:last-child{
+					border:none;
+				}
+			}
+
+		}
 	}
-
-	 .sub-title{
-        margin-top:100px
-    }
-
-    .about-text{
-        font-family: $secondaryFont;
-        text-align: center;
-    }
 }
 
 
@@ -226,8 +301,12 @@ header{
   MEDIA QUERIES			  =
 ==========================*/
 
-@media only screen and (min-width: 320px) and (max-width: 425px){
+@media only screen and (min-width: 320px) and (max-width: 426px){
 	
+	#home{
+		height: calc(100vh + 1px);
+	}
+
 	.sub-title{
 		font-size: 20pt;
 		font-weight: bold;
@@ -254,21 +333,29 @@ header{
 		nav{
 			border-top:1px solid #DEDEDE;
 			border-bottom:none;
+			
 			ul{
+				display:flex;
+				flex-direction: row;
+				justify-content: space-evenly;
+
 				li{
 					color : #7D7D7D;
-					font-size:8pt;
-					padding:12px 10px;
+					font-size:10pt;
+					padding:14px 10px;
+				}
+				
+				.nav-icon{
+					display:block;
+					margin: 0 auto 3px auto;
+					fill : #CECECE;
 				}
 
 				.active{
 					color : $black;
 
 					.nav-icon{
-                        display: block;
-                        margin: 0 auto 3px auto;
-                        fill : #7D7D7D;
-						fill:$black;
+                        fill : $black;                   
 					}
 				}
 			}
@@ -281,7 +368,7 @@ header{
 	.flex-container{
 		.welcome-text{
 			font-size: 18pt;
-			line-height: 20pt;
+			line-height: 22pt;
 		}
 
 		.home-button{
@@ -323,14 +410,29 @@ header{
 @font-face{
 	font-family: Raleway;
 	font-weight: bold;
-	src: url(../Fonts/Raleway-Bold.ttf);
+	src: url(../Fonts/Raleway-SemiBold.ttf);
+}
+
+@font-face{
+	font-family: Raleway;
+	font-weight: bolder;
+	src: url(../Fonts/Raleway-ExtraBold.ttf);
+}
+
+@font-face{
+	font-family: Raleway;
+	font-weight: lighter;
+	src: url(../Fonts/Raleway-Light.ttf);
+}
+
+@font-face{
+	font-family: helvetica;
+	font-weight: normal;
+	src: url(../Fonts/Helvetica.ttf);
 }
 
 
 
 
-
-
-
-
+/************************************************************/
 
