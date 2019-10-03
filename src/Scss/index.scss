@@ -132,18 +132,39 @@ header{
 	background-color: $primaryColor;
 	z-index: 2;
     height:60px;
+
   	nav{
 		border-bottom:4px solid #ff7e58;
+		display:flex;
+		justify-content: center;
+
 		ul{
 			list-style-type: none;
+			display:flex;
+			width:80%;
+			justify-content: space-evenly;
 
 			li{
 				color: $white;
 				font-family: $secondaryFont;
 				display: inline-block;
 				padding:20px 20px;
-			}
 
+				#logo{
+					width:40px;
+					height:40px;
+
+					img{
+						width:100%;
+						height:100%;
+					}
+				}
+
+				&:nth-child(3){
+					padding:10px 20px;
+				}
+			}
+	
 			.active{
 				color : $secondaryColor;
 			}
@@ -293,7 +314,7 @@ header{
   PORTFOLIO               =
 ==========================*/
 #portfolio{
-    height:100vh;
+    height:80vh;
     background-color: $primaryColor;
 
     .portfolio-container{
@@ -319,13 +340,20 @@ header{
     		display:flex;
     		flex-direction: row;
     		justify-content: space-between;
+    		width:100%;
 
     		.item-image-container{
     			width:400px;
     			height:220px;
-    			box-sizing: border-box;
-    			border:1px solid #707070;
+    			box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.2);
     			border-radius: 20px;
+    			opacity: 0.6;
+    			transition:opacity 0.3s ease;
+    			cursor: pointer;
+
+    			&:hover{
+    				opacity:1;
+    			}
 
     			img{
     				width:100%;
@@ -340,6 +368,7 @@ header{
 				width:50%;
 				color:$white;
 				font-family:$secondaryFont;
+				justify-content: space-evenly;
 
 				.item-title{
 					font-weight:bold;
@@ -350,14 +379,46 @@ header{
 					width:80%;
 					margin-top:20px;
 					font-weight:lighter;
+					font-size:11pt;
+					line-height: 14pt;
 				}
 
-				.sourceCode-button{
-
-				}
-
-				.preview-button{
+				.button-container{
+					display:flex;
+					flex-direction: row;
+					justify-content: space-between;
+					width:50%;
+					margin-top:30px;
 					
+					a{
+						text-decoration: none;
+					}
+
+					.sourceCode-button, .preview-button{
+						border:none;
+						padding:13px 23px;
+						border-radius:10px;
+						color:$black;
+						font-size:11pt;
+						cursor: pointer;
+						transition:all 0.4s ease;
+					}
+
+					.sourceCode-button{
+						background-color: #FFFFC5;
+
+						&:hover{
+							background-color: #ffff5f;
+						}
+					}
+
+					.preview-button{
+						background-color: #44DA57;
+
+						&:hover{
+							background-color: #00ff20;
+						}
+					}
 				}
     		}
     	}
@@ -371,13 +432,100 @@ header{
 ==========================*/
 #contact{
     height:100vh;
-    background-color: $secondaryColor;
+   	background-image: linear-gradient($primaryColor 30%, #72777C);
+
+	.contact-container{
+		flex-direction: column;
+		justify-content: flex-start;
+		font-family: $secondaryFont;
+		color:$white;
+
+		.title{
+			font-weight:bolder;
+			font-size:30pt;
+			margin-top:100px;
+		}
+
+		.line-white-short{
+    		margin-top:20px;
+    	}
+
+    	.text{
+    		color:$secondaryColor;
+    		margin-top:20px;
+    	}
+		
+		.field-name{
+			margin-top:20px;
+			font-weight: lighter;
+
+		}
+		
+		.form-container{
+			width:41%;
+
+	    	.form-start-container{
+	    		display:flex;
+	    		flex-direction: row;
+	    		justify-content:space-between;
+	    		margin-top:15px;
+	    		width:100%;
+
+	    		input{
+	    			background-color: transparent;
+	    			border:1.5px solid $white;
+	    			padding:10px 10px;
+	    			color:$white;
+	    			font-family: $secondaryFont;
+	    			font-size:15pt;
+	    			margin-top:12px;
+	    			width:90%;
+	    		}
+	    	}
+
+	    	textarea{
+	    		background-color:transparent;
+	    		border:1.5px solid $white;
+	    		padding:10px;
+	    		color:$white;
+	    		font-family:$secondaryFont;
+	    		font-size:15pt;
+	    		margin-top:12px;
+	    		resize:none;
+	    	}
+
+	    	.submit-button{
+	    		border:none;
+	    		background-color: #FC7A5D;
+	    		border-radius:10px;
+	    		padding:13px 20px;
+	    		width:30%;
+	    		margin:25px auto 0 auto;
+	    		text-align: center;
+	    		font-weight:bold;
+				cursor: pointer;
+	    	}
+		}
+	}
+}
+/*=========================
+  FOOTER				  =
+==========================*/
+#footer{
+	height:60px;
+	background-color: $primaryColor;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+
+	span{
+		color:#FF6F4F;
+		font-family:$secondaryFont;
+		font-size: 15pt;
+		margin-left:50px;
+	}
 }
 
-.contact-text{
-    font-family: $secondaryFont;
-    text-align: center;
-}
 
 /*=========================
   MEDIA QUERIES			  =
@@ -388,7 +536,7 @@ header{
 	#home{
 		height: calc(100vh + 1px);
 	}
-
+ 
 	.sub-title{
 		font-size: 20pt;
 		font-weight: bold;

@@ -11,8 +11,10 @@ export default class Portfolio extends Component {
 					img={require("./img/eatwhat-preview.png")}
 					imgAlt="EatWhat Preview"
 					title="Project EatWhat"
-					description="Something about project. Something about project. Something about project. 
-								 Something about project. Something about project. Something about project. "
+					description="My Final Year Project that I'm currently still working on. Food Recipe Website.
+								The search feature of our website is the main reason behind this project."
+					source="https://github.com/szehao/EatWhatWeb"
+					live=""
 
 				/>
 			</div>

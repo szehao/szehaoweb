@@ -34,6 +34,11 @@ export default class Header extends React.Component{
                             <div>ABOUT</div>
                             </Link>
                         </li>
+                        <li>
+                            <div id="logo">
+                                <img src={require("./../img/logo.png")} alt="Page Logo"/>
+                            </div>
+                        </li>
                         <li>            
                             <Link
                                 activeClass="active"

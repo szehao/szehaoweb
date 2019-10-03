@@ -4,6 +4,8 @@ import AnimateCanvas from "./Components/AnimateCanvas.js"
 import Welcome from "./Welcome.js"
 import About from "./About.js"
 import Portfolio from "./Portfolio.js"
+import Contact from "./Contact.js"
+import Footer from "./Components/Footer.js"
 import "./Scss/index.scss"
 import "./Scss/reset.css"
 import IntersectionVisible from 'react-intersection-visible';
@@ -21,6 +23,7 @@ export default class App extends React.Component{
 
 	render(){
 		return(
+			<div>
 				<main>
 					<section id="home">
 						<IntersectionVisible
@@ -60,8 +63,11 @@ export default class App extends React.Component{
 						<Portfolio />
 					</section>
 					<section id="contact">
+						<Contact />
 					</section>
 				</main>
+				<Footer />
+			</div>
 		);
 	}
 }
