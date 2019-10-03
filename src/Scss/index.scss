@@ -25,19 +25,12 @@ section{position: relative;}
 	padding:8px 20px;
 }
 
-.sub-title{
-	font-size: 20pt;
-	font-weight: bold;
-	font-family: $secondaryFont;
-	margin-top: 20px;
+.line-white-short{
+	height:3px;
+	width:40px;
+	background-color: $white;
 }
 
-.sub-title-underline{
-	width:50px;
-	height:2.5px;
-	background-color: $black;
-	margin-bottom: 12px;
-}
 /*=========================
   HOME 		  			  =
 ==========================*/
@@ -136,7 +129,7 @@ header{
 	position:absolute;
 	bottom:0;
 	width:100%;
-	background-color: $black;
+	background-color: $primaryColor;
 	z-index: 2;
     height:60px;
   	nav{
@@ -173,12 +166,13 @@ header{
   ABOUT 	  			  =
 ==========================*/
 #about{
-	height: 100vh;
+	height: 90vh;
 
 	.about-container{
 		justify-content: space-around;
 		display:flex;
 		flex-direction: row;
+		height:90vh;
 
 		.about-left-container{
 			width:40%;
@@ -205,6 +199,23 @@ header{
 				flex-direction: row;
 				width:18%;
 				justify-content: space-between;
+				
+				.icon{
+					cursor: pointer;
+
+					svg, svg path{
+						transition:fill 0.1s ease;
+						fill:rgba(0,0,0,0.6);
+					}
+
+					&:hover svg{
+						fill:$black;
+					}
+					
+					&:hover svg path{
+						fill:$black;
+					}
+				}
 			}
 
 			.about-button{
@@ -216,7 +227,7 @@ header{
 				font-size:16pt;
 				color:$white;
 				border-radius:5px;
-				padding:20px 30px;
+				padding:17px 32px;
 				box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 2px 2px 2px 0 rgba(0, 0, 0, 0.3);
 				margin-top:30px;
 				cursor: pointer;
@@ -229,7 +240,7 @@ header{
 		}
 
 		.about-right-container{
-			width:40%;
+			width:30%;
 			height:50%;
 
 			.title{
@@ -240,15 +251,18 @@ header{
 			}
 
 			.skills-container{
-				width:60%;
+				width:80%;
 				border-bottom:1px solid $primaryColor;
 				
+
 				.skill-title{
 					font-family:$secondaryFont;
 					font-weight:bold;
 					font-size:16pt;
 					color:$primaryColor;
 					margin-top:15px;
+
+
 				}
 				
 				.skill{
@@ -262,6 +276,10 @@ header{
 				
 				&:last-child{
 					border:none;
+				}
+
+				&:nth-child(2){
+					margin-top:-3px;
 				}
 			}
 
@@ -277,12 +295,76 @@ header{
 #portfolio{
     height:100vh;
     background-color: $primaryColor;
+
+    .portfolio-container{
+    	display:flex;
+    	justify-content: flex-start;
+    	flex-direction: column;
+    	align-items: flex-start;
+
+    	.title{
+    		font-family:$secondaryFont;
+    		font-weight:bolder;
+    		font-size:30pt;
+    		color:$white;
+    		margin-top:100px;
+    	}
+
+    	.line-white-short{
+    		margin-top:20px;
+    	}
+
+    	.portfolio-item{
+    		margin-top:30px;
+    		display:flex;
+    		flex-direction: row;
+    		justify-content: space-between;
+
+    		.item-image-container{
+    			width:400px;
+    			height:220px;
+    			box-sizing: border-box;
+    			border:1px solid #707070;
+    			border-radius: 20px;
+
+    			img{
+    				width:100%;
+    				height:100%;
+    				border-radius: 20px;
+    			}
+    		}
+
+    		.item-details{
+    			display:flex;
+    			flex-direction: column;
+				width:50%;
+				color:$white;
+				font-family:$secondaryFont;
+
+				.item-title{
+					font-weight:bold;
+					font-size:20pt;
+				}
+
+				.item-description{
+					width:80%;
+					margin-top:20px;
+					font-weight:lighter;
+				}
+
+				.sourceCode-button{
+
+				}
+
+				.preview-button{
+					
+				}
+    		}
+    	}
+    }
 }
 
-.portfolio-text{
-    font-family: $secondaryFont;
-    text-align: center;
-}
+
 
 /*=========================
   CONTACT                 =

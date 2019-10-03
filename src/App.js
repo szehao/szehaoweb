@@ -3,11 +3,12 @@ import Header from "./Components/Header.js"
 import AnimateCanvas from "./Components/AnimateCanvas.js"
 import Welcome from "./Welcome.js"
 import About from "./About.js"
+import Portfolio from "./Portfolio.js"
 import "./Scss/index.scss"
 import "./Scss/reset.css"
 import IntersectionVisible from 'react-intersection-visible';
 
-export default class AppTest extends React.Component{
+export default class App extends React.Component{
 	
 	constructor(props){
 		super(props);
@@ -56,6 +57,7 @@ export default class AppTest extends React.Component{
 						</IntersectionVisible>
 					</section>
 					<section id="portfolio">
+						<Portfolio />
 					</section>
 					<section id="contact">
 					</section>
