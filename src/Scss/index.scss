@@ -6,8 +6,9 @@ $black			: #000000;
 $primaryColor 	: #1D252D;
 $secondaryColor : #DF462B;
 
-$primaryFont 	: Poly, sans-serif;
-$secondaryFont  : Raleway, sans-serif;
+$primaryFont  : Raleway, sans-serif;
+$secondaryFont 	: Poly, sans-serif;
+
 
 /*=========================
   GLOBAL	   			  =
@@ -71,7 +72,7 @@ section{position: relative;}
 		color : $white;
 		text-align:center;
 		font-size: 32pt;
-		font-family: $primaryFont;
+		font-family: $secondaryFont;
 		line-height: 40pt;
 		margin-bottom: 17px;
 
@@ -81,7 +82,7 @@ section{position: relative;}
 	.home-button{
 		color: $white;
 		font-size:22pt;
-		font-family: $primaryFont;
+		font-family: $secondaryFont;
 		font-style: normal;
 		font-weight: 300;
 		cursor: pointer;
@@ -146,9 +147,14 @@ header{
 
 			li{
 				color: $white;
-				font-family: $secondaryFont;
+				font-family: $primaryFont;
+				font-weight:bold;
 				display: inline-block;
 				padding:20px 20px;
+				
+				div{
+					cursor:pointer;
+				}
 
 				#logo{
 					width:40px;
@@ -167,6 +173,8 @@ header{
 	
 			.active{
 				color : $secondaryColor;
+				pointer-events: none;
+				cursor: default;
 			}
 
             .nav-icon{
@@ -201,7 +209,7 @@ header{
 			border-right:1px solid $primaryColor;
 
 			.title{
-				font-family:$secondaryFont;
+				font-family:$primaryFont;
 				font-weight:bolder;
 				font-size:50pt;
 				color:$primaryColor;
@@ -210,7 +218,7 @@ header{
 			.short-description{
 				margin-top:15px;
 				width:66%;
-				font-family:$secondaryFont;
+				font-family:$primaryFont;
 				font-weight:lighter;
 			}
 
@@ -244,7 +252,7 @@ header{
 				text-align: center;
 				background-color: #FC7A5D;
 				border:none;
-				font-family: $primaryFont;
+				font-family: $secondaryFont;
 				font-size:16pt;
 				color:$white;
 				border-radius:5px;
@@ -265,7 +273,7 @@ header{
 			height:50%;
 
 			.title{
-				font-family:$secondaryFont;
+				font-family:$primaryFont;
 				font-weight:bolder;
 				font-size:50pt;
 				color:$primaryColor;
@@ -277,7 +285,7 @@ header{
 				
 
 				.skill-title{
-					font-family:$secondaryFont;
+					font-family:$primaryFont;
 					font-weight:bold;
 					font-size:16pt;
 					color:$primaryColor;
@@ -287,7 +295,7 @@ header{
 				}
 				
 				.skill{
-					font-family:$secondaryFont;
+					font-family:$primaryFont;
 					font-weight:normal;
 					font-size:10pt;
 					color:$black;
@@ -324,7 +332,7 @@ header{
     	align-items: flex-start;
 
     	.title{
-    		font-family:$secondaryFont;
+    		font-family:$primaryFont;
     		font-weight:bolder;
     		font-size:30pt;
     		color:$white;
@@ -367,7 +375,7 @@ header{
     			flex-direction: column;
 				width:50%;
 				color:$white;
-				font-family:$secondaryFont;
+				font-family:$primaryFont;
 				justify-content: space-evenly;
 
 				.item-title{
@@ -437,7 +445,7 @@ header{
 	.contact-container{
 		flex-direction: column;
 		justify-content: flex-start;
-		font-family: $secondaryFont;
+		font-family: $primaryFont;
 		color:$white;
 
 		.title{
@@ -458,11 +466,12 @@ header{
 		.field-name{
 			margin-top:20px;
 			font-weight: lighter;
-
+			text-align: left;
 		}
 		
 		.form-container{
 			width:41%;
+			text-align:center;
 
 	    	.form-start-container{
 	    		display:flex;
@@ -470,13 +479,13 @@ header{
 	    		justify-content:space-between;
 	    		margin-top:15px;
 	    		width:100%;
-
+				
 	    		input{
 	    			background-color: transparent;
 	    			border:1.5px solid $white;
 	    			padding:10px 10px;
 	    			color:$white;
-	    			font-family: $secondaryFont;
+	    			font-family: $primaryFont;
 	    			font-size:15pt;
 	    			margin-top:12px;
 	    			width:90%;
@@ -488,7 +497,7 @@ header{
 	    		border:1.5px solid $white;
 	    		padding:10px;
 	    		color:$white;
-	    		font-family:$secondaryFont;
+	    		font-family:$primaryFont;
 	    		font-size:15pt;
 	    		margin-top:12px;
 	    		resize:none;
@@ -520,9 +529,9 @@ header{
 
 	span{
 		color:#FF6F4F;
-		font-family:$secondaryFont;
+		font-family:$primaryFont;
 		font-size: 15pt;
-		margin-left:50px;
+		margin-left:100px;
 	}
 }
 
@@ -540,7 +549,7 @@ header{
 	.sub-title{
 		font-size: 20pt;
 		font-weight: bold;
-		font-family: $secondaryFont;
+		font-family: $primaryFont;
 		margin-top: 20px;
 	}
 
@@ -621,15 +630,6 @@ header{
 	src: url(../Fonts/Poly-Regular.otf);
 }
 
-@font-face{
-	font-family: Grenze;
-	src: url(../Fonts/Grenze-Regular.ttf);
-}
-
-@font-face{
-	font-family: Lora;
-	src: url(../Fonts/Lora-Regular.otf);
-}
 
 @font-face{
 	font-family: Raleway;
@@ -655,11 +655,6 @@ header{
 	src: url(../Fonts/Raleway-Light.ttf);
 }
 
-@font-face{
-	font-family: helvetica;
-	font-weight: normal;
-	src: url(../Fonts/Helvetica.ttf);
-}
 
 
 
