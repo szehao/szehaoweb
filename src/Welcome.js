@@ -1,8 +1,7 @@
 import React from "react"
-import {Link} from "react-scroll"
 
 export default class Welcome extends React.Component{
-	
+
 	render(){
 		return(
 			<div className="flex-container welcome">
@@ -11,18 +10,11 @@ export default class Welcome extends React.Component{
 					<br/>I'm a student / developer.
 				</div>
 
-				<Link
-                    activeClass="active"
-                    to="about"
-                    spy={true}
-                    smooth={true}
-                    offset={1}
-                    duration={250}
-                >
-	                <div className="button home-button">
+				
+	                <div className="button home-button" onClick={() => this.props.click("from-welcome")}>
 	                What I do <i className="arrow-right"></i>
 					</div>
-                </Link>
+                
 			</div>
 		)
 	}
