@@ -16,7 +16,7 @@ export default class Portfolio extends Component {
 					description="My Final Year Project that I'm currently still working on. Food Recipe Website.
 								The search feature of our website is the main reason behind this project."
 					source="https://github.com/szehao/EatWhatWeb"
-					live="eatwhat.ngszehao.com"
+					live="http://eatwhat.ngszehao.com"
 
 				/>
 				<PortFolioItem

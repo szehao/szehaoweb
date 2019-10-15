@@ -86,7 +86,7 @@ class AnimateCanvas extends React.Component {
           this.draw(particle, i);
         }
       }
-    },1000/this.state.fps);
+    },2000/this.state.fps);
   }
   
   resetParticle(particle, i){

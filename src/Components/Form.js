@@ -54,7 +54,7 @@ export default class Form extends Component {
 				<div className="field-name">Message</div>
 				<TextareaAutosize 
 					rows={10}
-					style={{width: "95%"}}
+					style={{width: "100%"}}
 					onChange={ e => this.setState({value : e.target.value})}
 				/>
 				<input type="hidden" name="message" value={this.state.value}/>

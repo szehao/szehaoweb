@@ -17,17 +17,16 @@ export default class Header extends React.Component{
 		this.about = this.props.offset.about;
 		this.portfolio = this.props.offset.portfolio;
 		this.contact = this.props.offset.contact;
-		
 	}
 
 
 	handleScroll = () => {
-		if(window.innerWidth < 425 && window.pageYOffset > 50){
+		if(window.innerWidth < 600 && window.pageYOffset > 50){
 			this.setState({display : "block"});
-		}else if(window.innerWidth < 425){
+		}else if(window.innerWidth < 600){
 			this.setState({display : "none"});
 		}
-		if(window.innerWidth < 425){
+		if(window.innerWidth < 600){
 			
 		}else{
 			if(window.pageYOffset >= this.state.fixed){
@@ -54,7 +53,7 @@ export default class Header extends React.Component{
 			fixed : navbar.offsetTop
 		});
 
-		window.innerWidth <425? 
+		window.innerWidth <600? 
 		this.setState({display : "none"}) : 
 		this.setState({display : "block"});
 	}

@@ -114,16 +114,9 @@ section{position: relative;}
 /*=========================
   HEADER 	  			  =
 ==========================*/
-.header-container{
-    width:100%;
-    height:60px;
-    position:absolute;
-    bottom:0;
-}
-
 @keyframes animtateDown{
 	0%{
-		transform : translateY(-200px);
+		transform : translateY(-100px);
 	}
 }
 
@@ -195,7 +188,7 @@ header{
   ABOUT 	  			  =
 ==========================*/
 #about{
-	height: 100vh;
+	height: 100%;
 
 	.about-container{
 		justify-content: space-around;
@@ -480,7 +473,25 @@ header{
 	    		justify-content:space-between;
 	    		margin-top:15px;
 	    		width:100%;
-				
+
+				.name-container{
+					display:flex;
+					align-items: flex-start;
+					flex-direction: column;
+					width:48%;
+				}
+
+				.email-container{
+					display:flex;
+					align-items: flex-end;
+					flex-direction: column;
+					width:48%;
+
+					.field-name{
+						align-self: flex-start;
+					}
+				}
+
 	    		input{
 	    			background-color: transparent;
 	    			border:1.5px solid $white;
@@ -489,21 +500,23 @@ header{
 	    			font-family: $primaryFont;
 	    			font-size:15pt;
 	    			margin-top:12px;
-	    			width:90%;
+	    			width:100%;
+	    			box-sizing: border-box;
 	    		}
 	    	}
 
 	    	textarea{
 	    		background-color:transparent;
 	    		border:1.5px solid $white;
-	    		padding:10px;
 	    		color:$white;
 	    		font-family:$primaryFont;
 	    		font-size:15pt;
 	    		margin-top:12px;
 	    		resize:none;
+	    		box-sizing: border-box;
+	    		padding:10px;
 	    	}
-
+			
 	    	.submit-button{
 	    		border:none;
 	    		background-color: #FC7A5D;
@@ -550,13 +563,14 @@ header{
   MEDIA QUERIES			  =
 ==========================*/
 
-@media only screen and (min-width: 320px) and (max-width: 426px){
+// Mobile Portrait
+@media only screen and (max-width:600px){
 	
 	#home{
 		height: 100vh;
 	}
- 
-	.sub-title{
+
+ 	.sub-title{
 		font-size: 20pt;
 		font-weight: bold;
 		font-family: $primaryFont;
@@ -634,13 +648,13 @@ header{
 	#about{
 		.about-container{
 			flex-direction: column;
+			height:100%;
 
 			.about-left-container{
-				margin-top:100px;
+				margin-top:80px;
 				width:100%;
 				text-align: center;
 				border:none;
-				height:50vh;
 
 				.title{
 					font-size:40pt;
@@ -655,6 +669,8 @@ header{
 					flex-direction: row;
 					align-items: center;
 					justify-content: space-between;
+					width:70%;
+					margin:0 auto;
 					
 					.icon-container{
 						margin-top:30px;
@@ -670,7 +686,7 @@ header{
 
 			.about-right-container{
 				margin-top:50px;
-				margin-bottom:100px;
+				margin-bottom:80px;
 				width:100%;
 				height:100%;
 				text-align: center;
@@ -692,20 +708,22 @@ header{
 	#portfolio{
 
 		.portfolio-container{
-
+			align-items: center;
 			.title{
 				margin-top:50px;
 			}
 
 			.portfolio-item{
+				align-items: center;
 				flex-direction: column;
 
 				.item-image-container{
-					width:100%;
+					width:300px;
 					height:180px;
 				}
 
 				.item-details{
+					align-items: center;
 					width:100%;
 
 					.item-title{
@@ -714,6 +732,7 @@ header{
 					}
 
 					.item-description{
+						text-align: center;
 						width:100%;
 					}
 
@@ -730,27 +749,18 @@ header{
 	=====================*/
 	#contact{
 		.contact-container{
+
+			.text{text-align:center;}
+
 			.form-container{
 				width:100%;
 				
 				.form-start-container{
 					justify-content: space-between;
+				}
 
-					.name-container{
-						display:flex;
-						align-items: flex-start;
-						flex-direction: column;
-					}
-
-					.email-container{
-						display:flex;
-						align-items: flex-end;
-						flex-direction: column;
-					}
-
-					input{
-						width:80%;
-					}
+				.submit-button{
+					width:50%;
 				}
 			}
 		}
@@ -764,6 +774,579 @@ header{
 
 }
 
+// Mobile LandScape
+@media only screen and (min-width:601px) and (max-width:900px){
+	 	
+	/*=====================
+	=  HEADER 		  	  =
+	=====================*/
+	header{
+		display:none;
+		height:50px;
+		nav{
+			height:50px;
+			ul{
+				li{
+					font-size:11pt;
+					padding:18px 10px;
+
+					#logo{
+						width:35px;
+						height:35px;
+					}
+				}
+			}
+		}
+	}
+
+	/*=====================
+	=  HOME 		  	  =
+	=====================*/
+	.flex-container{
+		.welcome-text{
+			font-size: 24pt;
+			line-height: 30pt;
+		}
+
+		.home-button{
+			font-size: 17pt;
+		}
+	}
+
+	/*=====================
+	=  ABOUT 		  	  =
+	=====================*/
+	#about{
+		.about-container{
+			flex-direction: column;
+			height:100%;
+
+			.about-left-container{
+				margin-top:140px;
+				width:100%;
+				text-align: center;
+				border:none;
+
+				.title{
+					font-size:40pt;
+				}
+
+				.short-description{
+					width:80%;
+					margin:15px auto 15px auto;
+				}
+
+				.ic-but-container{
+					width:70%;
+					margin:0 auto;
+					display:flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: space-between;
+					
+					.icon-container{
+						margin-top:30px;
+					}
+
+					.about-button{
+						width:35%;
+						padding:15px 32px;
+						font-size:12pt;
+					}
+				}
+			}
+
+			.about-right-container{
+				margin-top:50px;
+				margin-bottom:80px;
+				width:75%;
+				height:100%;
+				text-align: center;
+
+				.title{
+					font-size:40pt;
+				}
+
+				.skills-container{
+					width:100%;
+				}
+			}
+		}
+	}
+
+	/*=====================
+	=  PORTFOLIO	  	  =
+	=====================*/
+	#portfolio{
+
+		.portfolio-container{
+			align-items: center;
+			.title{
+				margin-top:50px;
+			}
+
+			.portfolio-item{
+				align-items: center;
+				flex-direction: column;
+
+				.item-image-container{
+					width:300px;
+					height:180px;
+				}
+
+				.item-details{
+					align-items: center;
+					width:100%;
+
+					.item-title{
+						margin-top:20px;
+						font-size:15pt;
+					}
+
+					.item-description{
+						text-align: center;
+						width:80%;
+					}
+
+					.button-container{
+						width:80%;
+						justify-content: space-evenly;
+					}
+				}
+			}
+		}
+	}
+	/*=====================
+	=  CONTACT	  		  =
+	=====================*/
+	#contact{
+		.contact-container{
+
+			.text{text-align:center;}
+
+			.form-container{
+				width:80%;
+				
+				.form-start-container{
+					justify-content: space-between;
+
+					.name-container{
+						display:flex;
+						align-items: flex-start;
+						flex-direction: column;
+						width:48%;
+					}
+
+					.email-container{
+						display:flex;
+						align-items: flex-end;
+						flex-direction: column;
+						width:48%;
+
+						.field-name{
+							align-self: flex-start;
+						}
+					}
+				}
+
+				.submit-button{
+					width:50%;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:901px) and (max-width:1200px){
+	 	
+	/*=====================
+	=  HOME 		  	  =
+	=====================*/
+	.flex-container{
+		.welcome-text{
+			font-size: 24pt;
+			line-height: 30pt;
+		}
+
+		.home-button{
+			font-size: 17pt;
+		}
+	}
+
+	/*=====================
+	=  ABOUT 		  	  =
+	=====================*/
+	#about{
+		.about-container{
+			width:90%;
+
+			.about-left-container{
+				width:45%;
+				height:45%;
+				.title{
+					font-size:40pt;
+				}
+
+				.short-description{
+					width:85%;
+				}
+
+				.ic-but-container{
+					.about-button{
+						width:35%;
+					}
+				}
+			}
+
+			.about-right-container{
+				height:45%;
+				.title{
+					font-size:40pt;
+				}
+
+				.skills-container{
+
+					.skill-title{
+						font-size:14pt;
+					}
+
+					.skill{
+						font-size:10pt;
+					}
+				}
+
+			}
+		}
+	}
+
+	/*=====================
+	=  PORTFOLIO	  	  =
+	=====================*/
+	#portfolio{
+
+		.portfolio-container{
+
+			.title{
+				font-size:26pt;
+			}
+
+			.portfolio-item{
+
+				.item-image-container{
+					width:300px;
+					height:180px;
+				}
+
+				.item-details{
+					width:50%;
+
+					.item-title{
+						font-size:14pt;
+					}
+
+					.line-white-short{
+						margin-top:15px;
+					}
+
+					.item-description{
+						width:80%;
+						font-size:10pt;
+						margin-top:15px;
+					}
+
+					.button-container{
+						width:80%;
+						margin-top:15px;
+					}
+				}
+			}
+		}
+	}
+	/*=====================
+	=  CONTACT	  		  =
+	=====================*/
+	#contact{
+		.contact-container{
+
+			.text{text-align:center;}
+
+			.form-container{
+				width:80%;
+				
+				.form-start-container{
+					justify-content: space-between;
+
+					.name-container{
+						display:flex;
+						align-items: flex-start;
+						flex-direction: column;
+						width:48%;
+					}
+
+					.email-container{
+						display:flex;
+						align-items: flex-end;
+						flex-direction: column;
+						width:48%;
+
+						.field-name{
+							align-self: flex-start;
+						}
+					}
+				}
+
+				.submit-button{
+					width:50%;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:1800px){
+	 	
+	/*=====================
+	=  HEADER 		  	  =
+	=====================*/
+	header{
+		height:80px;
+		nav{
+			height:80px;
+			ul{
+				li{
+					font-size:16pt;
+					padding:30px 10px;
+
+					#logo{
+						width:50px;
+						height:50px;
+					}
+				}
+			}
+		}
+	}
+
+	/*=====================
+	=  HOME 		  	  =
+	=====================*/
+	.flex-container{
+		.welcome-text{
+			font-size: 40pt;
+			line-height: 50pt;
+		}
+
+		.home-button{
+			font-size: 30pt;
+		}
+	}
+
+	/*=====================
+	=  ABOUT 		  	  =
+	=====================*/
+	#about{
+		.about-container{
+			flex-direction: row;
+
+			.about-left-container{
+				display:flex;
+				flex-direction: column;
+				justify-content: center;
+
+				.title{
+					font-size:60pt;
+				}
+
+				.short-description{
+					width:80%;
+					font-size:17pt;
+					margin-top:30px;
+				}
+
+				.ic-but-container{
+					width:70%;
+					margin-top:30px;
+					display:flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: space-between;
+					
+					.icon-container{
+						margin-top:30px;
+
+						.icon{
+							svg{
+								width:60px;
+								height:60px;
+							}
+						}
+					}
+
+					.about-button{
+						width:35%;
+						padding:20px 35px;
+						font-size: 20pt;
+					}
+				}
+			}
+
+			.about-right-container{
+				display:flex;
+				flex-direction: column;
+				justify-content: center;
+	
+				.title{
+					font-size:60pt;
+				}
+
+				.skills-container{
+					width:90%;
+
+					.skill-title{
+						font-size:20pt;
+					}
+
+					.skill{
+						font-size:13pt;
+					}
+				}
+			}
+		}
+	}
+
+	/*=====================
+	=  PORTFOLIO	  	  =
+	=====================*/
+	#portfolio{
+
+		.portfolio-container{
+
+			.title{
+				font-size:35pt;
+				margin-top:50px;
+			}
+
+			.line-white-short{
+				height:5px;
+				width:4%;
+				margin-top:30px;
+			}
+
+			.portfolio-item{
+				margin-top:50px;
+
+				.item-image-container{
+					width:520px;
+					height:280px;
+				}
+
+				.item-details{
+					width:55%;
+
+					.item-title{
+						font-size:25pt;
+					}
+
+					.line-white-short{
+						margin-top:10px;
+						width:6%;
+					}
+
+					.item-description{
+						width:80%;
+						font-size:15pt;
+						line-height: 20pt;
+						margin-top:15px;
+					}
+
+					.button-container{
+						width:50%;
+						justify-content: space-between;
+
+						.sourceCode-button, .preview-button{
+							font-size:16pt;
+							padding:15px 30px;
+						}
+					}
+				}
+			}
+		}
+	}
+	/*=====================
+	=  CONTACT	  		  =
+	=====================*/
+	#contact{
+
+		.contact-container{
+			
+			.title{
+				margin-top:120px;
+				font-size: 35pt;
+			}
+			
+			.line-white-short{
+				height:5px;
+				width:4%;
+			}
+
+			.text{
+				font-size: 18pt;
+			}
+
+			.form-container{
+				width:50%;
+				
+				.form-start-container{
+					justify-content: space-between;
+
+					.name-container, .email-container{
+						display:flex;
+						align-items: flex-start;
+						flex-direction: column;
+						width:48%;
+						font-size:17pt;
+					}
+					
+					.email-container{
+
+						.field-name{
+							align-self: flex-start;
+						}
+					}
+
+
+					input{
+						height:60px;
+						font-size:17pt;
+					}
+				}
+
+				.submit-button{
+					width:30%;
+					padding:20px 30px;
+					font-size:15pt;
+				}
+
+				textarea{
+					height:300px;
+				}
+			}
+
+			.field-name{
+				font-size:17pt;
+			}
+
+
+		}
+	}
+
+	#footer{
+		height:80px;
+
+		span{
+			font-size:20pt;
+		}
+	}
+}
 /*=========================
   FONT-FACE   			  =
 ==========================*/

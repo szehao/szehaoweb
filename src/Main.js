@@ -55,7 +55,7 @@ export default class Main extends Component {
 				this.smoothScroll(document.getElementById("anchor-contact"));
 			break;
 			case "from-welcome":
-				if(window.innerWidth < 425){
+				if(window.innerWidth < 900){
 					this.smoothScroll(document.getElementById("anchor-about"));
 				}else{
 					this.smoothScroll(document.getElementById("anchor-about-welcome"));
