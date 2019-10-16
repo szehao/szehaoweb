@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/szehaoweb/static/css/main.fc54e15b.chunk.css",
+    "main.js": "/szehaoweb/static/js/main.f2b33b1f.chunk.js",
+    "main.js.map": "/szehaoweb/static/js/main.f2b33b1f.chunk.js.map",
+    "runtime-main.js": "/szehaoweb/static/js/runtime-main.884cd56b.js",
+    "runtime-main.js.map": "/szehaoweb/static/js/runtime-main.884cd56b.js.map",
+    "static/js/2.ab71990e.chunk.js": "/szehaoweb/static/js/2.ab71990e.chunk.js",
+    "static/js/2.ab71990e.chunk.js.map": "/szehaoweb/static/js/2.ab71990e.chunk.js.map",
+    "index.html": "/szehaoweb/index.html",
+    "precache-manifest.7b15b680a5b336d5124b732c44ef4f19.js": "/szehaoweb/precache-manifest.7b15b680a5b336d5124b732c44ef4f19.js",
+    "service-worker.js": "/szehaoweb/service-worker.js",
+    "static/css/main.fc54e15b.chunk.css.map": "/szehaoweb/static/css/main.fc54e15b.chunk.css.map",
+    "static/media/index.scss": "/szehaoweb/static/media/Raleway-SemiBold.17ba6410.ttf",
+    "static/media/eatwhat-preview.png": "/szehaoweb/static/media/eatwhat-preview.c28c70b0.png",
+    "static/media/logo.png": "/szehaoweb/static/media/logo.7f74ee7a.png"
+  }
+}
