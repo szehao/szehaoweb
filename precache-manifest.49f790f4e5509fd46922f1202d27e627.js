@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "53f1ebdcb7210907d924a4fa59436cdc",
+    "revision": "8374217c7615b1b88f3e0f29ba186d6e",
     "url": "/szehaoweb/index.html"
   },
   {
-    "revision": "040d1a5316a32242ff8a",
-    "url": "/szehaoweb/static/css/main.fc54e15b.chunk.css"
+    "revision": "c88ee4544962e44cf7c0",
+    "url": "/szehaoweb/static/css/main.1b32644b.chunk.css"
   },
   {
     "revision": "8e7899658f9fd3427bb9",
     "url": "/szehaoweb/static/js/2.ab71990e.chunk.js"
   },
   {
-    "revision": "040d1a5316a32242ff8a",
+    "revision": "c88ee4544962e44cf7c0",
     "url": "/szehaoweb/static/js/main.f2b33b1f.chunk.js"
   },
   {
