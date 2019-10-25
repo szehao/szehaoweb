@@ -4,8 +4,8 @@ export default class Header extends React.Component{
     
     constructor(props){
 		super(props);
-		this.headerRef = React.createRef();
-		this.handleScroll = this.handleScroll.bind(this);
+		this.headerRef 		= React.createRef();
+		this.handleScroll 	= this.handleScroll.bind(this);
 		this.state = {
 			active : "home",
 		}
@@ -13,29 +13,15 @@ export default class Header extends React.Component{
 	
 	componentDidUpdate(){
 		window.addEventListener("scroll", this.handleScroll);
-		this.home = this.props.offset.home;
-		this.about = this.props.offset.about;
-		this.portfolio = this.props.offset.portfolio;
-		this.contact = this.props.offset.contact;
+		this.home 		= this.props.offset.home;
+		this.about 		= this.props.offset.about;
+		this.portfolio 	= this.props.offset.portfolio;
+		this.contact 	= this.props.offset.contact;
 	}
 
 
 	handleScroll = () => {
-		if(window.innerWidth < 600 && window.pageYOffset > 50){
-			this.setState({display : "block"});
-		}else if(window.innerWidth < 600){
-			this.setState({display : "none"});
-		}
-		if(window.innerWidth < 600){
-			
-		}else{
-			if(window.pageYOffset >= this.state.fixed){
-				this.headerRef.current.classList.add("fixed");
-			}else{
-				this.headerRef.current.classList.remove("fixed");
-			}
-		}
-			
+
 		if(this.home >= window.pageYOffset){
 			this.setState({active : "home"});
 		}else if(this.home + this.about >= window.pageYOffset){
@@ -44,7 +30,26 @@ export default class Header extends React.Component{
 			this.setState({active : "portfolio"});
 		}else{
 			this.setState({active : "contact"});
+		}		
+	
+		// Sticky Nav
+		if(window.innerWidth > 600){
+			if(window.pageYOffset >= this.state.fixed){
+				this.headerRef.current.classList.add("fixed");
+			}else{
+				this.headerRef.current.classList.remove("fixed");
+			}
+		}		
+
+		// For Mobile
+		if(window.innerWidth < 600 && window.pageYOffset > 50){
+			this.setState({display : "block"});
+		}else if(window.innerWidth < 600){
+			this.setState({display : "none"});
 		}
+
+
+
 	}
 
 	componentDidMount() {

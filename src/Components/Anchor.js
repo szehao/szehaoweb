@@ -8,7 +8,8 @@ export default class Anchor extends Component {
 				id={this.props.id}
 				className="anchor"
 				style={{top: this.props.offset}}
-			></div>
+			>
+			</div>
 		);
 	}
 }

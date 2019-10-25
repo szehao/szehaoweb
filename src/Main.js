@@ -13,27 +13,27 @@ export default class Main extends Component {
 	
 	constructor(props){
 		super(props);
-		this.homeRef = React.createRef();
-		this.aboutRef = React.createRef();
-		this.portfolioRef = React.createRef();
-		this.contactRef = React.createRef();
+		this.homeRef 		= React.createRef();
+		this.aboutRef 		= React.createRef();
+		this.portfolioRef 	= React.createRef();
+		this.contactRef 	= React.createRef();
 		this.state = {
 			className : "",
 		};
-		this.handleClick = this.handleClick.bind(this);
-		this.smoothScroll = this.smoothScroll.bind(this);
+		this.handleClick 	= this.handleClick.bind(this);
+		this.smoothScroll 	= this.smoothScroll.bind(this);
 	}
 	
 	
 	componentDidMount(){
 		this.setState({
 			offset : {
-				home : this.homeRef.current.getBoundingClientRect().height,
-				about : this.aboutRef.current.getBoundingClientRect().height,
-				portfolio : this.portfolioRef.current.getBoundingClientRect().height,
-				contact : this.contactRef.current.getBoundingClientRect().height
+				home 		: this.homeRef.current.getBoundingClientRect().height,
+				about 		: this.aboutRef.current.getBoundingClientRect().height,
+				portfolio 	: this.portfolioRef.current.getBoundingClientRect().height,
+				contactdiv 	: this.contactRef.current.getBoundingClientRect().height
 			}
-		})
+		});
 	}
 
 	smoothScroll = (ele) => {

@@ -56,8 +56,6 @@ class About extends React.Component{
 						<div className="skill">Adobe XD</div>
 					</div>
 				</div>
-
-
 			</div>
 		)
 	}

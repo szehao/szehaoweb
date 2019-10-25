@@ -13,9 +13,11 @@ export default class Form extends Component {
 	
 	 submitForm(ev) {
 		ev.preventDefault();
-		const form = ev.target;
-		const data = new FormData(form);
-		const xhr = new XMLHttpRequest();
+		
+		const form 	= ev.target;
+		const data 	= new FormData(form);
+		const xhr 	= new XMLHttpRequest();
+
 		xhr.open(form.method, form.action);
 		xhr.setRequestHeader("Accept", "application/json");
 		
