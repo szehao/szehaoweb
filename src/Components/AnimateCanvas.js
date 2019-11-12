@@ -6,20 +6,20 @@ class AnimateCanvas extends React.Component {
 		super(props);
 		this.canvasRef = React.createRef();
 		this.state = {
-			xPos : "",
- 			yPos : "",
-			radius : "",
-			colors : this.props.colors? this.props.colors : ['255, 255, 255','255, 99, 71','90, 90, 90'],
-			minRadius : this.props.minRadius? this.props.minRadius : 10,
-			maxRadius : this.props.maxRadius? this.props.maxRadius : 35,
-			minOpacity : this.props.minOpacity? this.props.minOpacity : .005,
-			maxOpacity : this.props.maxOpacity? this.props.maxOpacity : .3,
-			minSpeed : this.props.minSpeed? this.props.minSpeed : .10,
-			maxSpeed : this.props.maxSpeed? this.props.maxSpeed : .5,
- 			fps : 60,
- 			numParticles : this.props.numParticles? this.props.numParticles : 75,
-			width : window.innerWidth,
-			height : window.innerHeight
+			xPos 			: "",
+ 			yPos 			: "",
+			radius 			: "",
+			colors 			: this.props.colors? this.props.colors : ['255, 255, 255','255, 99, 71','90, 90, 90'],
+			minRadius 		: this.props.minRadius? this.props.minRadius : 10,
+			maxRadius 		: this.props.maxRadius? this.props.maxRadius : 35,
+			minOpacity 		: this.props.minOpacity? this.props.minOpacity : .005,
+			maxOpacity 		: this.props.maxOpacity? this.props.maxOpacity : .3,
+			minSpeed 		: this.props.minSpeed? this.props.minSpeed : .10,
+			maxSpeed 		: this.props.maxSpeed? this.props.maxSpeed : .5,
+ 			fps 			: 60,
+ 			numParticles 	: this.props.numParticles? this.props.numParticles : 75,
+			width 			: window.innerWidth,
+			height 			: window.innerHeight
 		};
     /*
       Binding functions
@@ -37,7 +37,7 @@ class AnimateCanvas extends React.Component {
   
 	handleResize(){
 		this.setState({
-			width: window.innerWidth,
+			width : window.innerWidth,
 			height: window.innerHeight,
 		});
 	}
@@ -112,7 +112,12 @@ class AnimateCanvas extends React.Component {
 	render() {
 		return(
 			<div id="canvas-container">
-				<canvas id="canvas" width={this.state.width} height={this.state.height} ref={this.canvasRef} />
+				<canvas 
+					id="canvas" 
+					width={this.state.width} 
+					height={this.state.height} 
+					ref={this.canvasRef}
+				/>
 			</div>
 		)
 	}
