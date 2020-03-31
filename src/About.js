@@ -8,7 +8,7 @@ class About extends React.Component{
 			<div className="flex-container about-container">
 				<Anchor id="anchor-about" offset="10px"/>
 				<Anchor id="anchor-about-welcome" offset="-10px"/>
-				<div className="about-left-container">
+				<div className="about-left-container animateElement" animation="slideInFromLeft">
 					<div className="title">
 						Who I am
 					</div>
@@ -35,7 +35,7 @@ class About extends React.Component{
 						</div>
 					</div>
 				</div>
-				<div className="about-right-container">
+				<div className="about-right-container animateElement" animation="slideInFromRight">
 					<div className="title">
 						Skills
 					</div>

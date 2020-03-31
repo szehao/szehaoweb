@@ -19,13 +19,18 @@ export default class Main extends Component {
 		this.contactRef 	= React.createRef();
 		this.state = {
 			className : "",
+			window_height : window.innerHeight,
+			window_top_position : window.pageYOffset,
+			window_bottom_position : window.innerHeight + window.pageYOffset
 		};
 		this.handleClick 	= this.handleClick.bind(this);
 		this.smoothScroll 	= this.smoothScroll.bind(this);
+		this.inView = this.inView.bind(this);
 	}
 	
 	
 	componentDidMount(){
+		window.addEventListener("scroll", this.inView);
 		this.setState({
 			offset : {
 				home 		: this.homeRef.current.getBoundingClientRect().height,
@@ -41,6 +46,7 @@ export default class Main extends Component {
 	}
 
 	handleClick = (ele) => {
+		console.log(this.state.window_top_position);
 		switch(ele){
 			case "home":
 				this.smoothScroll(this.homeRef.current);
@@ -65,6 +71,17 @@ export default class Main extends Component {
 				this.smoothScroll(this.homeRef.current);
 			break;
 		}
+	}
+
+	inView = () => {
+		document.querySelectorAll(".animateElement").forEach((ele) => {
+			let ele_height = ele.getBoundingClientRect().height;
+			let ele_top_position = ele.getBoundingClientRect().top;
+			let ele_bot_position = ele_top_position + ele_height;
+			if((ele_bot_position >= this.state.window_top_position) && (ele_top_position <= this.state.window_bottom_position)){
+				setTimeout(() => {ele.classList.add(ele.getAttribute("animation"));}, 200)
+			}			
+		});
 	}
 
 	render() {

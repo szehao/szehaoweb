@@ -15,6 +15,7 @@ $secondaryFont 	: Poly, sans-serif;
 ==========================*/
 html{
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 html,body, #root{height:100%;}
@@ -33,6 +34,27 @@ section{position: relative;}
 }
 
 .anchor{position:absolute;}
+
+/*=========================
+  ANIMATIONS  			  =
+==========================*/
+@keyframes animateDown{
+	0%{
+		transform : translateY(-100px);
+	}
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+}
 
 /*=========================
   HOME 		  			  =
@@ -115,11 +137,6 @@ section{position: relative;}
 /*=========================
   HEADER 	  			  =
 ==========================*/
-@keyframes animtateDown{
-	0%{
-		transform : translateY(-100px);
-	}
-}
 
 header{
 	width:100%;
@@ -182,7 +199,7 @@ header{
     position: fixed;
     width:100%;
     top:0;
-    animation : animtateDown .5s;
+    animation : animateDown .5s;
 }
 
 /*=========================
@@ -201,6 +218,7 @@ header{
 		.about-left-container{
 			width:40%;
 			height:50%;
+			opacity:0;
 			border-right:1px solid $primaryColor;
 
 			.title{
@@ -266,6 +284,7 @@ header{
 		.about-right-container{
 			width:30%;
 			height:50%;
+			opacity:0;
 
 			.title{
 				font-family:$primaryFont;
@@ -308,9 +327,20 @@ header{
 			}
 
 		}
+
+		.slideInFromLeft{
+			opacity:1;
+			animation : slideInFromLeft .5s ease;
+			transition : 1.5s ease;
+		}
+
+		.slideInFromRight{
+			opacity:1;
+			animation : slideInFromRight .5s ease;
+			transition : 1.5s ease;
+		}
 	}
 }
-
 
 
 /*=========================
@@ -331,10 +361,12 @@ header{
     		font-size:30pt;
     		color:$white;
     		margin-top:100px;
+    		opacity:0;
     	}
 
     	.line-white-short{
     		margin-top:20px;
+    		opacity:0;
     	}
 
     	.portfolio-item{
@@ -344,6 +376,7 @@ header{
     		margin-bottom:50px;
     		justify-content: space-between;
     		width:100%;
+    		opacity:0;
 
     		.item-image-container{
     			width:400px;
@@ -424,6 +457,12 @@ header{
 				}
     		}
     	}
+
+    	.slideInFromLeft{
+			opacity:1;
+			animation : slideInFromLeft .5s ease;
+			transition : 1.5s ease;
+		}
     }
 }
 
@@ -446,15 +485,18 @@ header{
 			font-weight:bolder;
 			font-size:30pt;
 			margin-top:100px;
+			opacity: 0;
 		}
 
 		.line-white-short{
     		margin-top:20px;
+    		opacity: 0;
     	}
 
     	.text{
     		color:#FC7A5D;
     		margin-top:20px;
+    		opacity: 0;
     	}
 		
 		.field-name{
@@ -463,9 +505,14 @@ header{
 			text-align: left;
 		}
 		
+		form{
+			opacity: 0;
+		}
+
 		.form-container{
 			width:41%;
 			text-align:center;
+			opacity: 1;
 
 	    	.form-start-container{
 	    		display:flex;
@@ -535,6 +582,23 @@ header{
 					background-color: #ff5f3b;
 				}
 	    	}
+		}
+		
+		.fade{
+			opacity: 1;
+			transition: 2s ease;
+		}
+
+		.slideInFromLeft{
+			animation : slideInFromLeft 0.5s;
+			opacity: 1;
+			transition: 1.5s eae;
+		}
+
+		.slideInFromRight{
+			animation : slideInFromRight 0.5s;
+			opacity: 1;
+			transition: 1.5s eae;
 		}
 	}
 }

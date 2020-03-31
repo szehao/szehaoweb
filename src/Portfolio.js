@@ -7,8 +7,8 @@ export default class Portfolio extends Component {
 		return (
 			<div className="flex-container portfolio-container">
 				<Anchor id="anchor-portfolio" offset="10px" />
-				<div className="title">Portfolio</div>
-				<div className="line-white-short"></div>
+				<div className="title animateElement" animation="slideInFromLeft">Portfolio</div>
+				<div className="line-white-short animateElement" animation="slideInFromLeft"></div>
 				<PortFolioItem
 					img={require("./img/eatwhat-preview.png")}
 					imgAlt="EatWhat Preview"

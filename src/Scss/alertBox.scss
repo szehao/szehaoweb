@@ -1,0 +1,62 @@
+.alert-box-container{
+	position: absolute;
+	display: none;
+	opacity: 1;
+	transition : all 0.5s ease;
+	background : white;
+	width: 30%;
+	height: 30%;
+	min-height: 30%;
+	max-height: 50%;
+	margin : auto;
+	top : 0;
+	left :0;
+	right: 0;
+	bottom: 0;
+
+	.content{
+		padding :20px;
+		height : 75%;
+		display : flex;
+		justify-content: space-evenly;
+		align-items: center;
+		flex-direction: column;
+		color:black;
+
+		.icon{
+			display : flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+
+	.button-cancel{
+		background : #b9b9b9;
+		border-radius: 3px;
+		border: none;
+		padding : 10px 20px;
+		margin-right: 20px;
+		cursor : pointer;
+		transition:background 0.5s ease;
+
+		&:hover{
+			background:#6d6d6d;
+		}
+	}
+
+	.button-retry{
+		background:green;
+		border-radius: 3px;
+		border:none;
+		padding:10px 20px;
+		margin-right: 20px;
+		transition:background 0.5s ease;
+		cursor:pointer;
+
+		&:hover{
+			background:#21bf4b;
+		}
+	}
+}
+

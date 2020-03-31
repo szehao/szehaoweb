@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class PortfolioItem extends Component {
 	render() {
 		return (
-			<div className="portfolio-item">
+			<div className="portfolio-item animateElement" animation="slideInFromLeft">
 				<div className="item-image-container"><a target="_blank" rel="noopener noreferrer" href={this.props.live}><img src={this.props.img} alt={this.props.imgAlt}/></a></div>
 				<div className="item-details">
 					<div className="item-title">{this.props.title}</div>
