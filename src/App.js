@@ -9,8 +9,12 @@ export default class App extends React.Component {
 		return (
 			<div>
 				<Route exact path={`/`} render={(routerProps) => <Main />} />
-				<Route path={`/projects/divsnippet`} render={(routerProps) => <DivSnippetApp />} />
-				<Route path={`/projects/eatwhat`} component={() => (window.location = 'http://eatwhat.ngszehao.com')} />
+				<Route exact path={`/projects/divsnippet`} render={(routerProps) => <DivSnippetApp />} />
+				<Route
+					exact
+					path={`/projects/eatwhat`}
+					component={() => (window.location = 'http://eatwhat.ngszehao.com')}
+				/>
 			</div>
 		);
 	}
