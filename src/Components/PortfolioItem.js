@@ -5,9 +5,9 @@ export default class PortfolioItem extends Component {
 		return (
 			<div className="portfolio-item animateElement" animation="slideInFromLeft">
 				<div className="item-image-container">
-					<a target="_blank" rel="noopener noreferrer" href={this.props.live}>
+					<Link target="_blank" to={this.props.live}>
 						<img src={this.props.img} alt={this.props.imgAlt} />
-					</a>
+					</Link>
 				</div>
 				<div className="item-details">
 					<div className="item-title">{this.props.title}</div>
