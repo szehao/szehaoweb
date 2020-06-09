@@ -39,7 +39,6 @@ export default function MultiTab ({ children }) {
 			try {
 				const grandChildren = children[0] && children[0].props.children;
 				if (!Array.isArray(children)) throw new Error('MultiTab must have at least 2 children');
-				if (children[0].type.name !== 'TabHeader') throw new Error('TabHeader must come before TabContents');
 				if (React.Children.count(children) - 1 !== React.Children.count(grandChildren))
 					throw new Error('Number of TabContents must be the same as Tabs');
 
