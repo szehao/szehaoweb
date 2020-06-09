@@ -4,6 +4,8 @@ import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
+const history = createBrowserHistory();
+
 ReactDOM.render(
 	<Router history={history} basename={process.env.PUBLIC_URL}>
 		<App />
