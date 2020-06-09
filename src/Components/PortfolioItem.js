@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
 export default class PortfolioItem extends Component {
-	render() {
+	render () {
 		return (
 			<div className="portfolio-item animateElement" animation="slideInFromLeft">
-				<div className="item-image-container"><a target="_blank" rel="noopener noreferrer" href={this.props.live}><img src={this.props.img} alt={this.props.imgAlt}/></a></div>
+				<div className="item-image-container">
+					<a target="_blank" rel="noopener noreferrer" href={this.props.live}>
+						<img src={this.props.img} alt={this.props.imgAlt} />
+					</a>
+				</div>
 				<div className="item-details">
 					<div className="item-title">{this.props.title}</div>
-					<div className="line-white-short"></div>
+					<div className="line-white-short" />
 					<div className="item-description">{this.props.description}</div>
 					<div className="button-container">
 						<a target="_blank" rel="noopener noreferrer" href={this.props.source}>
 							<div className="sourceCode-button button">Source Code</div>
 						</a>
-						<a target="_blank" rel="noopener noreferrer" href={this.props.live}>
+						<Link target="_blank" to={this.props.live}>
 							<div className="preview-button button">Live Preview</div>
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

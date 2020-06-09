@@ -1,89 +1,96 @@
 /*=========================
   Variables   			  =
 ==========================*/
-$white 			: #FFFFFF;
-$black			: #000000;
-$primaryColor 	: #1D252D;
-$secondaryColor : #DF462B;
+$white: #ffffff;
+$black: #000000;
+$primaryColor: #1d252d;
+$secondaryColor: #df462b;
 
-$primaryFont  : Raleway, sans-serif;
-$secondaryFont 	: Poly, sans-serif;
-
+$primaryFont: Raleway, sans-serif;
+$secondaryFont: Poly, sans-serif;
 
 /*=========================
   GLOBAL	   			  =
 ==========================*/
-html{
+html {
 	scroll-behavior: smooth;
 	overflow-x: hidden;
 }
 
-html,body, #root{height:100%;}
-
-section{position: relative;}
-
-.button{
-	border:2px solid;
-	padding:8px 20px;
+html,
+body,
+#root {
+	height: 100%;
 }
 
-.line-white-short{
-	height:3px;
-	width:40px;
+section {
+	position: relative;
+}
+
+.button {
+	border: 2px solid;
+	padding: 8px 20px;
+}
+
+.line-white-short {
+	height: 3px;
+	width: 40px;
 	background-color: $white;
 }
 
-.anchor{position:absolute;}
+.anchor {
+	position: absolute;
+}
 
 /*=========================
   ANIMATIONS  			  =
 ==========================*/
-@keyframes animateDown{
-	0%{
-		transform : translateY(-100px);
+@keyframes animateDown {
+	0% {
+		transform: translateY(-100px);
 	}
 }
 
 @keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-  }
+	0% {
+		transform: translateX(-100%);
+	}
 }
 
 @keyframes slideInFromRight {
-  0% {
-    transform: translateX(100%);
-  }
+	0% {
+		transform: translateX(100%);
+	}
 }
 
 /*=========================
   HOME 		  			  =
 ==========================*/
-.app-container{
-	height:100%;
-	overflow-x:hidden;
+.app-container {
+	height: 100%;
+	overflow-x: hidden;
 }
 
-#canvas-container{
+#canvas-container {
 	position: absolute;
-	top:0;
-	left:0;
-	height:100vh;
+	top: 0;
+	left: 0;
+	height: 100vh;
 
-    canvas{
-        width:100%;
-        height:100%;
-    }
+	canvas {
+		width: 100%;
+		height: 100%;
+	}
 }
 
-#home{
+#home {
 	background-color: $primaryColor;
 	display: flex;
 	height: 100vh;
 }
 
-.flex-container{
-	display:flex;
+.flex-container {
+	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -91,44 +98,46 @@ section{position: relative;}
 	margin: 0 auto;
 	z-index: 1;
 
-	.welcome-text{
-		color : $white;
-		text-align:center;
+	.welcome-text {
+		color: $white;
+		text-align: center;
 		font-size: 32pt;
 		font-family: $secondaryFont;
 		line-height: 40pt;
 		margin-bottom: 17px;
 
-		span{color:$secondaryColor;}
+		span {
+			color: $secondaryColor;
+		}
 	}
 
-	.home-button{
+	.home-button {
 		color: $white;
-		font-size:22pt;
+		font-size: 22pt;
 		font-family: $secondaryFont;
 		font-style: normal;
 		font-weight: 300;
 		cursor: pointer;
 		transition: 0.5s ease;
-		margin-top:10px;
-		&:hover{
+		margin-top: 10px;
+		&:hover {
 			border-color: $secondaryColor;
 			transition: 0.5s ease;
 			background-color: $secondaryColor;
 
-			.arrow-right{
+			.arrow-right {
 				transition: 0.5s ease;
 				transform: rotate(90deg);
 			}
 		}
 
-		.arrow-right{
+		.arrow-right {
 			display: inline-block;
 			font-size: 16pt;
-			margin-left:10px;
+			margin-left: 10px;
 			transition: 0.5s ease;
-			&::before{
-				content: '\279C' 
+			&::before {
+				content: '\279C';
 			}
 		}
 	}
@@ -138,465 +147,460 @@ section{position: relative;}
   HEADER 	  			  =
 ==========================*/
 
-header{
-	width:100%;
+header {
+	width: 100%;
 	background-color: $primaryColor;
 	z-index: 2;
-    height:60px;
+	height: 60px;
 
-  	nav{
-		border-bottom:4px solid #ff7e58;
-		display:flex;
+	nav {
+		border-bottom: 4px solid #ff7e58;
+		display: flex;
 		justify-content: center;
 
-		ul{
+		ul {
 			list-style-type: none;
-			display:flex;
-			width:80%;
+			display: flex;
+			width: 80%;
 			justify-content: space-evenly;
 
-			li{
+			li {
 				color: $white;
 				font-family: $primaryFont;
-				font-weight:bold;
+				font-weight: bold;
 				display: inline-block;
-				padding:20px 20px;
-				transition:all 0.8s ease;
-				
-				div{
-					cursor:pointer;
+				padding: 20px 20px;
+				transition: all 0.8s ease;
+
+				div {
+					cursor: pointer;
 				}
 
-				#logo{
-					width:40px;
-					height:40px;
+				#logo {
+					width: 40px;
+					height: 40px;
 
-					img{
-						width:100%;
-						height:100%;
+					img {
+						width: 100%;
+						height: 100%;
 					}
 				}
 
-				&:nth-child(3){
-					padding:10px 20px;
+				&:nth-child(3) {
+					padding: 10px 20px;
 				}
 			}
-	
-			.active{
-				color : $secondaryColor;
+
+			.active {
+				color: $secondaryColor;
 				pointer-events: none;
 				cursor: default;
 			}
 
-            .nav-icon{
-                display:none;
-            }
+			.nav-icon {
+				display: none;
+			}
 		}
 	}
 }
 
-.fixed{
-    position: fixed;
-    width:100%;
-    top:0;
-    animation : animateDown .5s;
+.fixed {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	animation: animateDown .5s;
 }
 
 /*=========================
   ABOUT 	  			  =
 ==========================*/
-#about{
+#about {
 	height: 100%;
 
-	.about-container{
+	.about-container {
 		justify-content: space-around;
-		display:flex;
+		display: flex;
 		flex-direction: row;
-		height:100vh;
-		position:relative;
+		height: 100vh;
+		position: relative;
 
-		.about-left-container{
-			width:40%;
-			height:50%;
-			opacity:0;
-			border-right:1px solid $primaryColor;
+		.about-left-container {
+			width: 40%;
+			height: 50%;
+			opacity: 0;
+			border-right: 1px solid $primaryColor;
 
-			.title{
-				font-family:$primaryFont;
-				font-weight:bolder;
-				font-size:50pt;
-				color:$primaryColor;
+			.title {
+				font-family: $primaryFont;
+				font-weight: bolder;
+				font-size: 50pt;
+				color: $primaryColor;
 			}
 
-			.short-description{
-				margin-top:15px;
-				width:66%;
-				font-family:$primaryFont;
-				font-weight:lighter;
+			.short-description {
+				margin-top: 15px;
+				width: 66%;
+				font-family: $primaryFont;
+				font-weight: lighter;
 			}
 
-			.icon-container{
-				margin-top:25px;
-				display:flex;
+			.icon-container {
+				margin-top: 25px;
+				display: flex;
 				flex-direction: row;
-				width:18%;
+				width: 18%;
 				justify-content: space-between;
-				
-				.icon{
+
+				.icon {
 					cursor: pointer;
 
-					svg, svg path{
-						transition:fill 0.1s ease;
-						fill:rgba(0,0,0,0.6);
+					svg,
+					svg path {
+						transition: fill 0.1s ease;
+						fill: rgba(0, 0, 0, 0.6);
 					}
 
-					&:hover svg{
-						fill:$black;
+					&:hover svg {
+						fill: $black;
 					}
-					
-					&:hover svg path{
-						fill:$black;
+
+					&:hover svg path {
+						fill: $black;
 					}
 				}
 			}
 
-			.about-button{
-				width:30%;
+			.about-button {
+				width: 30%;
 				text-align: center;
-				background-color: #FC7A5D;
-				border:none;
+				background-color: #fc7a5d;
+				border: none;
 				font-family: $secondaryFont;
-				font-size:16pt;
-				color:$white;
-				border-radius:5px;
-				padding:17px 32px;
+				font-size: 16pt;
+				color: $white;
+				border-radius: 5px;
+				padding: 17px 32px;
 				box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 2px 2px 2px 0 rgba(0, 0, 0, 0.3);
-				margin-top:30px;
+				margin-top: 30px;
 				cursor: pointer;
-				transition:all 0.3s ease;
+				transition: all 0.3s ease;
 
-				&:hover{
+				&:hover {
 					background-color: #ff5f3b;
 				}
 			}
 		}
 
-		.about-right-container{
-			width:30%;
-			height:50%;
-			opacity:0;
+		.about-right-container {
+			width: 30%;
+			height: 50%;
+			opacity: 0;
 
-			.title{
-				font-family:$primaryFont;
-				font-weight:bolder;
-				font-size:50pt;
-				color:$primaryColor;
+			.title {
+				font-family: $primaryFont;
+				font-weight: bolder;
+				font-size: 50pt;
+				color: $primaryColor;
 			}
 
-			.skills-container{
-				width:80%;
-				border-bottom:1px solid $primaryColor;
-				
+			.skills-container {
+				width: 80%;
+				border-bottom: 1px solid $primaryColor;
 
-				.skill-title{
-					font-family:$primaryFont;
-					font-weight:bold;
-					font-size:16pt;
-					color:$primaryColor;
-					margin-top:15px;
-
-
-				}
-				
-				.skill{
-					font-family:$primaryFont;
-					font-weight:normal;
-					font-size:10pt;
-					color:$black;
-					margin-top:2px;
-					margin-bottom:15px;
-				}
-				
-				&:last-child{
-					border:none;
+				.skill-title {
+					font-family: $primaryFont;
+					font-weight: bold;
+					font-size: 16pt;
+					color: $primaryColor;
+					margin-top: 15px;
 				}
 
-				&:nth-child(2){
-					margin-top:-3px;
+				.skill {
+					font-family: $primaryFont;
+					font-weight: normal;
+					font-size: 10pt;
+					color: $black;
+					margin-top: 2px;
+					margin-bottom: 15px;
+				}
+
+				&:last-child {
+					border: none;
+				}
+
+				&:nth-child(2) {
+					margin-top: -3px;
 				}
 			}
-
 		}
 
-		.slideInFromLeft{
-			opacity:1;
-			animation : slideInFromLeft .5s ease;
-			transition : 1.5s ease;
+		.slideInFromLeft {
+			opacity: 1;
+			animation: slideInFromLeft .5s ease;
+			transition: 1.5s ease;
 		}
 
-		.slideInFromRight{
-			opacity:1;
-			animation : slideInFromRight .5s ease;
-			transition : 1.5s ease;
+		.slideInFromRight {
+			opacity: 1;
+			animation: slideInFromRight .5s ease;
+			transition: 1.5s ease;
 		}
 	}
 }
 
-
 /*=========================
   PORTFOLIO               =
 ==========================*/
-#portfolio{
-    background-color: $primaryColor;
+#portfolio {
+	background-color: $primaryColor;
 
-    .portfolio-container{
-    	display:flex;
-    	justify-content: flex-start;
-    	flex-direction: column;
-    	align-items: flex-start;
+	.portfolio-container {
+		display: flex;
+		justify-content: flex-start;
+		flex-direction: column;
+		align-items: flex-start;
 
-    	.title{
-    		font-family:$primaryFont;
-    		font-weight:bolder;
-    		font-size:30pt;
-    		color:$white;
-    		margin-top:100px;
-    		opacity:0;
-    	}
+		.title {
+			font-family: $primaryFont;
+			font-weight: bolder;
+			font-size: 30pt;
+			color: $white;
+			margin-top: 100px;
+			opacity: 0;
+		}
 
-    	.line-white-short{
-    		margin-top:20px;
-    		opacity:0;
-    	}
+		.line-white-short {
+			margin-top: 20px;
+			opacity: 0;
+		}
 
-    	.portfolio-item{
-    		margin-top:30px;
-    		display:flex;
-    		flex-direction: row;
-    		margin-bottom:50px;
-    		justify-content: space-between;
-    		width:100%;
-    		opacity:0;
+		.portfolio-item {
+			margin-top: 30px;
+			display: flex;
+			flex-direction: row;
+			margin-bottom: 50px;
+			justify-content: space-between;
+			width: 100%;
+			opacity: 0;
 
-    		.item-image-container{
-    			width:400px;
-    			height:220px;
-    			box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.2);
-    			border-radius: 20px;
-    			opacity: 0.6;
-    			transition:opacity 0.3s ease;
-    			cursor: pointer;
+			.item-image-container {
+				width: 400px;
+				height: 220px;
+				box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.2);
+				border-radius: 20px;
+				opacity: 0.6;
+				transition: opacity 0.3s ease;
+				cursor: pointer;
 
-    			&:hover{
-    				opacity:1;
-    			}
-
-    			img{
-    				width:100%;
-    				height:100%;
-    				border-radius: 20px;
-    			}
-    		}
-
-    		.item-details{
-    			display:flex;
-    			flex-direction: column;
-				width:50%;
-				color:$white;
-				font-family:$primaryFont;
-				justify-content: space-evenly;
-
-				.item-title{
-					font-weight:bold;
-					font-size:20pt;
+				&:hover {
+					opacity: 1;
 				}
 
-				.item-description{
-					width:80%;
-					margin-top:20px;
-					font-weight:lighter;
-					font-size:11pt;
+				img {
+					width: 100%;
+					height: 100%;
+					border-radius: 20px;
+				}
+			}
+
+			.item-details {
+				display: flex;
+				flex-direction: column;
+				width: 50%;
+				color: $white;
+				font-family: $primaryFont;
+				justify-content: space-evenly;
+
+				.item-title {
+					font-weight: bold;
+					font-size: 20pt;
+				}
+
+				.item-description {
+					width: 80%;
+					margin-top: 20px;
+					font-weight: lighter;
+					font-size: 11pt;
 					line-height: 14pt;
 				}
 
-				.button-container{
-					display:flex;
+				.button-container {
+					display: flex;
 					flex-direction: row;
-					margin-top:30px;
-					
-					a{
+					margin-top: 30px;
+
+					a {
 						text-decoration: none;
 					}
 
-					.sourceCode-button, .preview-button{
-						border:none;
-						padding:13px 23px;
-						border-radius:10px;
-						color:$black;
-						font-size:11pt;
+					.sourceCode-button,
+					.preview-button {
+						border: none;
+						padding: 13px 23px;
+						border-radius: 10px;
+						color: $black;
+						font-size: 11pt;
 						cursor: pointer;
-						transition:all 0.4s ease;
+						transition: all 0.4s ease;
 					}
 
-					.sourceCode-button{
-						background-color: #FFFFC5;
+					.sourceCode-button {
+						background-color: #ffffc5;
 
-						&:hover{
+						&:hover {
 							background-color: #ffff5f;
 						}
 					}
 
-					.preview-button{
-						background-color: #44DA57;
+					.preview-button {
+						background-color: #44da57;
 						margin-left: 50px;
 
-						&:hover{
+						&:hover {
 							background-color: #00ff20;
 						}
 					}
 				}
-    		}
-    	}
-
-    	.slideInFromLeft{
-			opacity:1;
-			animation : slideInFromLeft .5s ease;
-			transition : 1.5s ease;
+			}
 		}
-    }
+
+		.slideInFromLeft {
+			opacity: 1;
+			animation: slideInFromLeft .5s ease;
+			transition: 1.5s ease;
+		}
+	}
 }
-
-
 
 /*=========================
   CONTACT                 =
 ==========================*/
-#contact{
-    height:100%;
-   	background-image: linear-gradient($primaryColor 30%, #72777C);
+#contact {
+	height: 95vh;
+	background-image: linear-gradient($primaryColor 30%, #72777c);
 
-	.contact-container{
+	.contact-container {
 		flex-direction: column;
 		justify-content: flex-start;
 		font-family: $primaryFont;
-		color:$white;
+		color: $white;
 
-		.title{
-			font-weight:bolder;
-			font-size:30pt;
-			margin-top:100px;
+		.title {
+			font-weight: bolder;
+			font-size: 30pt;
+			margin-top: 100px;
 			opacity: 0;
 		}
 
-		.line-white-short{
-    		margin-top:20px;
-    		opacity: 0;
-    	}
+		.line-white-short {
+			margin-top: 20px;
+			opacity: 0;
+		}
 
-    	.text{
-    		color:#FC7A5D;
-    		margin-top:20px;
-    		opacity: 0;
-    	}
-		
-		.field-name{
-			margin-top:20px;
+		.text {
+			color: #fc7a5d;
+			margin-top: 20px;
+			opacity: 0;
+		}
+
+		.field-name {
+			margin-top: 20px;
 			font-weight: lighter;
 			text-align: left;
 		}
-		
-		form{
+
+		form {
 			opacity: 0;
 		}
 
-		.form-container{
-			width:41%;
-			text-align:center;
+		.form-container {
+			width: 41%;
+			text-align: center;
 			opacity: 1;
 
-	    	.form-start-container{
-	    		display:flex;
-	    		flex-direction: row;
-	    		justify-content:space-between;
-	    		margin-top:15px;
-	    		width:100%;
+			.form-start-container {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				margin-top: 15px;
+				width: 100%;
 
-				.name-container{
-					display:flex;
+				.name-container {
+					display: flex;
 					align-items: flex-start;
 					flex-direction: column;
-					width:48%;
+					width: 48%;
 				}
 
-				.email-container{
-					display:flex;
+				.email-container {
+					display: flex;
 					align-items: flex-end;
 					flex-direction: column;
-					width:48%;
+					width: 48%;
 
-					.field-name{
+					.field-name {
 						align-self: flex-start;
 					}
 				}
 
-	    		input{
-	    			background-color: transparent;
-	    			border:1.5px solid $white;
-	    			padding:10px 10px;
-	    			color:$white;
-	    			font-family: $primaryFont;
-	    			font-size:15pt;
-	    			margin-top:12px;
-	    			width:100%;
-	    			box-sizing: border-box;
-	    		}
-	    	}
+				input {
+					background-color: transparent;
+					border: 1.5px solid $white;
+					padding: 10px 10px;
+					color: $white;
+					font-family: $primaryFont;
+					font-size: 15pt;
+					margin-top: 12px;
+					width: 100%;
+					box-sizing: border-box;
+				}
+			}
 
-	    	textarea{
-	    		background-color:transparent;
-	    		border:1.5px solid $white;
-	    		color:$white;
-	    		font-family:$primaryFont;
-	    		font-size:15pt;
-	    		margin-top:12px;
-	    		resize:none;
-	    		box-sizing: border-box;
-	    		padding:10px;
-	    	}
-			
-	    	.submit-button{
-	    		border:none;
-	    		background-color: #FC7A5D;
-	    		border-radius:10px;
-	    		padding:13px 20px;
-	    		width:30%;
-	    		margin:25px auto 0 auto;
-	    		text-align: center;
-	    		font-weight:bold;
+			textarea {
+				background-color: transparent;
+				border: 1.5px solid $white;
+				color: $white;
+				font-family: $primaryFont;
+				font-size: 15pt;
+				margin-top: 12px;
+				resize: none;
+				box-sizing: border-box;
+				padding: 10px;
+			}
+
+			.submit-button {
+				border: none;
+				background-color: #fc7a5d;
+				border-radius: 10px;
+				padding: 13px 20px;
+				width: 30%;
+				margin: 25px auto 0 auto;
+				text-align: center;
+				font-weight: bold;
 				cursor: pointer;
 				color: $white;
-				transition:all 0.5s ease;
-				margin-bottom:50px;
+				transition: all 0.5s ease;
+				margin-bottom: 50px;
 
-				&:hover{
+				&:hover {
 					background-color: #ff5f3b;
 				}
-	    	}
+			}
 		}
-		
-		.fade{
+
+		.fade {
 			opacity: 1;
 			transition: 2s ease;
 		}
 
-		.slideInFromLeft{
-			animation : slideInFromLeft 0.5s;
+		.slideInFromLeft {
+			animation: slideInFromLeft 0.5s;
 			opacity: 1;
 			transition: 1.5s eae;
 		}
 
-		.slideInFromRight{
-			animation : slideInFromRight 0.5s;
+		.slideInFromRight {
+			animation: slideInFromRight 0.5s;
 			opacity: 1;
 			transition: 1.5s eae;
 		}
@@ -605,87 +609,84 @@ header{
 /*=========================
   FOOTER				  =
 ==========================*/
-#footer{
-	height:60px;
+#footer {
+	height: 60px;
 	background-color: $primaryColor;
-	display:flex;
+	display: flex;
 	flex-direction: column;
 	justify-content: center;
 
-//change vh to %, margin-bottom footer in mobile
+	//change vh to %, margin-bottom footer in mobile
 
-	span{
-		color:#FF6F4F;
-		font-family:$primaryFont;
+	span {
+		color: #ff6f4f;
+		font-family: $primaryFont;
 		font-size: 15pt;
-		margin-left:100px;
+		margin-left: 100px;
 	}
 }
-
 
 /*=========================
   MEDIA QUERIES			  =
 ==========================*/
 
 // Mobile Portrait
-@media only screen and (max-width:600px){
-	
-	#home{
+@media only screen and (max-width: 600px) {
+	#home {
 		height: 100vh;
 	}
 
- 	.sub-title{
+	.sub-title {
 		font-size: 20pt;
 		font-weight: bold;
 		font-family: $primaryFont;
 		margin-top: 20px;
 	}
 
-	.sub-title-underline{
-		width:50px;
-		height:2.5px;
+	.sub-title-underline {
+		width: 50px;
+		height: 2.5px;
 		background-color: black;
 	}
 	/*=====================
 	=  HEADER 		  	  =
 	=====================*/
-	header{
+	header {
 		position: fixed;
-		bottom:0;
-		width:100%;
+		bottom: 0;
+		width: 100%;
 		text-align: center;
 		background-color: white;
 
+		nav {
+			border-top: 1px solid #dedede;
+			border-bottom: none;
 
-		nav{
-			border-top:1px solid #DEDEDE;
-			border-bottom:none;
-			
-			ul{
-				display:flex;
+			ul {
+				display: flex;
 				flex-direction: row;
 
-				li{
-					color : #7D7D7D;
-					font-size:10pt;
-					padding:14px 10px;
-					
-					&:nth-child(3){
-						display:none;
+				li {
+					color: #7d7d7d;
+					font-size: 10pt;
+					padding: 14px 10px;
+
+					&:nth-child(3) {
+						display: none;
 					}
 				}
-				
-				.nav-icon{
-					display:block;
+
+				.nav-icon {
+					display: block;
 					margin: 0 auto 3px auto;
-					fill : #CECECE;
+					fill: #cecece;
 				}
 
-				.active{
-					color : $black;
+				.active {
+					color: $black;
 
-					.nav-icon{
-                        fill : $black;                   
+					.nav-icon {
+						fill: $black;
 					}
 				}
 			}
@@ -695,13 +696,13 @@ header{
 	/*=====================
 	=  HOME 		  	  =
 	=====================*/
-	.flex-container{
-		.welcome-text{
+	.flex-container {
+		.welcome-text {
 			font-size: 18pt;
 			line-height: 22pt;
 		}
 
-		.home-button{
+		.home-button {
 			font-size: 15pt;
 		}
 	}
@@ -709,58 +710,58 @@ header{
 	/*=====================
 	=  ABOUT 		  	  =
 	=====================*/
-	#about{
-		.about-container{
+	#about {
+		.about-container {
 			flex-direction: column;
-			height:100%;
+			height: 100%;
 
-			.about-left-container{
-				margin-top:80px;
-				width:100%;
+			.about-left-container {
+				margin-top: 80px;
+				width: 100%;
 				text-align: center;
-				border:none;
+				border: none;
 
-				.title{
-					font-size:40pt;
+				.title {
+					font-size: 40pt;
 				}
 
-				.short-description{
-					width:100%;
+				.short-description {
+					width: 100%;
 				}
 
-				.ic-but-container{
-					display:flex;
+				.ic-but-container {
+					display: flex;
 					flex-direction: row;
 					align-items: center;
 					justify-content: space-between;
-					width:100%;
-					margin:0 auto;
-					
-					.icon-container{
-						margin-top:30px;
+					width: 100%;
+					margin: 0 auto;
+
+					.icon-container {
+						margin-top: 30px;
 					}
 
-					.about-button{
-						width:35%;
-						padding:15px 32px;
-						font-size:12pt;
+					.about-button {
+						width: 35%;
+						padding: 15px 32px;
+						font-size: 12pt;
 					}
 				}
 			}
 
-			.about-right-container{
-				margin-top:50px;
-				margin-bottom:80px;
-				width:100%;
-				height:100%;
+			.about-right-container {
+				margin-top: 50px;
+				margin-bottom: 80px;
+				width: 100%;
+				height: 100%;
 				text-align: center;
 
-				.title{
-					font-size:40pt;
+				.title {
+					font-size: 40pt;
 				}
 
-				.skills-container{
-					width:100%;
+				.skills-container {
+					width: 100%;
 				}
 			}
 		}
@@ -769,39 +770,38 @@ header{
 	/*=====================
 	=  PORTFOLIO	  	  =
 	=====================*/
-	#portfolio{
-
-		.portfolio-container{
+	#portfolio {
+		.portfolio-container {
 			align-items: center;
-			.title{
-				margin-top:50px;
+			.title {
+				margin-top: 50px;
 			}
 
-			.portfolio-item{
+			.portfolio-item {
 				align-items: center;
 				flex-direction: column;
 
-				.item-image-container{
-					width:300px;
-					height:180px;
+				.item-image-container {
+					width: 300px;
+					height: 180px;
 				}
 
-				.item-details{
+				.item-details {
 					align-items: center;
-					width:100%;
+					width: 100%;
 
-					.item-title{
-						margin-top:20px;
-						font-size:15pt;
+					.item-title {
+						margin-top: 20px;
+						font-size: 15pt;
 					}
 
-					.item-description{
+					.item-description {
 						text-align: center;
-						width:100%;
+						width: 100%;
 					}
 
-					.button-container{
-						width:100%;
+					.button-container {
+						width: 100%;
 						justify-content: space-evenly;
 					}
 				}
@@ -811,20 +811,21 @@ header{
 	/*=====================
 	=  CONTACT	  		  =
 	=====================*/
-	#contact{
-		.contact-container{
+	#contact {
+		.contact-container {
+			.text {
+				text-align: center;
+			}
 
-			.text{text-align:center;}
+			.form-container {
+				width: 100%;
 
-			.form-container{
-				width:100%;
-				
-				.form-start-container{
+				.form-start-container {
 					justify-content: space-between;
 				}
 
-				.submit-button{
-					width:50%;
+				.submit-button {
+					width: 50%;
 				}
 			}
 		}
@@ -832,31 +833,29 @@ header{
 	/*=====================
 	=  FOOTER		  	  =
 	=====================*/
-	#footer{
-		margin-bottom:60px;
+	#footer {
+		margin-bottom: 60px;
 	}
-
 }
 
 // Mobile LandScape
-@media only screen and (min-width:601px) and (max-width:900px){
-	 	
+@media only screen and (min-width: 601px) and (max-width: 900px) {
 	/*=====================
 	=  HEADER 		  	  =
 	=====================*/
-	header{
-		display:none;
-		height:50px;
-		nav{
-			height:50px;
-			ul{
-				li{
-					font-size:11pt;
-					padding:18px 10px;
+	header {
+		display: none;
+		height: 50px;
+		nav {
+			height: 50px;
+			ul {
+				li {
+					font-size: 11pt;
+					padding: 18px 10px;
 
-					#logo{
-						width:35px;
-						height:35px;
+					#logo {
+						width: 35px;
+						height: 35px;
 					}
 				}
 			}
@@ -866,13 +865,13 @@ header{
 	/*=====================
 	=  HOME 		  	  =
 	=====================*/
-	.flex-container{
-		.welcome-text{
+	.flex-container {
+		.welcome-text {
 			font-size: 24pt;
 			line-height: 30pt;
 		}
 
-		.home-button{
+		.home-button {
 			font-size: 17pt;
 		}
 	}
@@ -880,59 +879,59 @@ header{
 	/*=====================
 	=  ABOUT 		  	  =
 	=====================*/
-	#about{
-		.about-container{
+	#about {
+		.about-container {
 			flex-direction: column;
-			height:100%;
+			height: 100%;
 
-			.about-left-container{
-				margin-top:140px;
-				width:100%;
+			.about-left-container {
+				margin-top: 140px;
+				width: 100%;
 				text-align: center;
-				border:none;
+				border: none;
 
-				.title{
-					font-size:40pt;
+				.title {
+					font-size: 40pt;
 				}
 
-				.short-description{
-					width:80%;
-					margin:15px auto 15px auto;
+				.short-description {
+					width: 80%;
+					margin: 15px auto 15px auto;
 				}
 
-				.ic-but-container{
-					width:70%;
-					margin:0 auto;
-					display:flex;
+				.ic-but-container {
+					width: 70%;
+					margin: 0 auto;
+					display: flex;
 					flex-direction: row;
 					align-items: center;
 					justify-content: space-between;
-					
-					.icon-container{
-						margin-top:30px;
+
+					.icon-container {
+						margin-top: 30px;
 					}
 
-					.about-button{
-						width:35%;
-						padding:15px 32px;
-						font-size:12pt;
+					.about-button {
+						width: 35%;
+						padding: 15px 32px;
+						font-size: 12pt;
 					}
 				}
 			}
 
-			.about-right-container{
-				margin-top:50px;
-				margin-bottom:80px;
-				width:75%;
-				height:100%;
+			.about-right-container {
+				margin-top: 50px;
+				margin-bottom: 80px;
+				width: 75%;
+				height: 100%;
 				text-align: center;
 
-				.title{
-					font-size:40pt;
+				.title {
+					font-size: 40pt;
 				}
 
-				.skills-container{
-					width:100%;
+				.skills-container {
+					width: 100%;
 				}
 			}
 		}
@@ -941,39 +940,38 @@ header{
 	/*=====================
 	=  PORTFOLIO	  	  =
 	=====================*/
-	#portfolio{
-
-		.portfolio-container{
+	#portfolio {
+		.portfolio-container {
 			align-items: center;
-			.title{
-				margin-top:50px;
+			.title {
+				margin-top: 50px;
 			}
 
-			.portfolio-item{
+			.portfolio-item {
 				align-items: center;
 				flex-direction: column;
 
-				.item-image-container{
-					width:300px;
-					height:180px;
+				.item-image-container {
+					width: 300px;
+					height: 180px;
 				}
 
-				.item-details{
+				.item-details {
 					align-items: center;
-					width:100%;
+					width: 100%;
 
-					.item-title{
-						margin-top:20px;
-						font-size:15pt;
+					.item-title {
+						margin-top: 20px;
+						font-size: 15pt;
 					}
 
-					.item-description{
+					.item-description {
 						text-align: center;
-						width:80%;
+						width: 80%;
 					}
 
-					.button-container{
-						width:80%;
+					.button-container {
+						width: 80%;
 						justify-content: space-evenly;
 					}
 				}
@@ -983,56 +981,56 @@ header{
 	/*=====================
 	=  CONTACT	  		  =
 	=====================*/
-	#contact{
-		.contact-container{
+	#contact {
+		.contact-container {
+			.text {
+				text-align: center;
+			}
 
-			.text{text-align:center;}
+			.form-container {
+				width: 80%;
 
-			.form-container{
-				width:80%;
-				
-				.form-start-container{
+				.form-start-container {
 					justify-content: space-between;
 
-					.name-container{
-						display:flex;
+					.name-container {
+						display: flex;
 						align-items: flex-start;
 						flex-direction: column;
-						width:48%;
+						width: 48%;
 					}
 
-					.email-container{
-						display:flex;
+					.email-container {
+						display: flex;
 						align-items: flex-end;
 						flex-direction: column;
-						width:48%;
+						width: 48%;
 
-						.field-name{
+						.field-name {
 							align-self: flex-start;
 						}
 					}
 				}
 
-				.submit-button{
-					width:50%;
+				.submit-button {
+					width: 50%;
 				}
 			}
 		}
 	}
 }
 
-@media only screen and (min-width:901px) and (max-width:1200px){
-	 	
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
 	/*=====================
 	=  HOME 		  	  =
 	=====================*/
-	.flex-container{
-		.welcome-text{
+	.flex-container {
+		.welcome-text {
 			font-size: 24pt;
 			line-height: 30pt;
 		}
 
-		.home-button{
+		.home-button {
 			font-size: 17pt;
 		}
 	}
@@ -1040,45 +1038,43 @@ header{
 	/*=====================
 	=  ABOUT 		  	  =
 	=====================*/
-	#about{
-		.about-container{
-			width:90%;
+	#about {
+		.about-container {
+			width: 90%;
 
-			.about-left-container{
-				width:45%;
-				height:45%;
-				.title{
-					font-size:40pt;
+			.about-left-container {
+				width: 45%;
+				height: 45%;
+				.title {
+					font-size: 40pt;
 				}
 
-				.short-description{
-					width:85%;
+				.short-description {
+					width: 85%;
 				}
 
-				.ic-but-container{
-					.about-button{
-						width:35%;
+				.ic-but-container {
+					.about-button {
+						width: 35%;
 					}
 				}
 			}
 
-			.about-right-container{
-				height:45%;
-				.title{
-					font-size:40pt;
+			.about-right-container {
+				height: 45%;
+				.title {
+					font-size: 40pt;
 				}
 
-				.skills-container{
-
-					.skill-title{
-						font-size:14pt;
+				.skills-container {
+					.skill-title {
+						font-size: 14pt;
 					}
 
-					.skill{
-						font-size:10pt;
+					.skill {
+						font-size: 10pt;
 					}
 				}
-
 			}
 		}
 	}
@@ -1086,41 +1082,38 @@ header{
 	/*=====================
 	=  PORTFOLIO	  	  =
 	=====================*/
-	#portfolio{
-
-		.portfolio-container{
-
-			.title{
-				font-size:26pt;
+	#portfolio {
+		.portfolio-container {
+			.title {
+				font-size: 26pt;
 			}
 
-			.portfolio-item{
-
-				.item-image-container{
-					width:300px;
-					height:180px;
+			.portfolio-item {
+				.item-image-container {
+					width: 300px;
+					height: 180px;
 				}
 
-				.item-details{
-					width:50%;
+				.item-details {
+					width: 50%;
 
-					.item-title{
-						font-size:14pt;
+					.item-title {
+						font-size: 14pt;
 					}
 
-					.line-white-short{
-						margin-top:15px;
+					.line-white-short {
+						margin-top: 15px;
 					}
 
-					.item-description{
-						width:80%;
-						font-size:10pt;
-						margin-top:15px;
+					.item-description {
+						width: 80%;
+						font-size: 10pt;
+						margin-top: 15px;
 					}
 
-					.button-container{
-						width:80%;
-						margin-top:15px;
+					.button-container {
+						width: 80%;
+						margin-top: 15px;
 					}
 				}
 			}
@@ -1129,61 +1122,61 @@ header{
 	/*=====================
 	=  CONTACT	  		  =
 	=====================*/
-	#contact{
-		.contact-container{
+	#contact {
+		.contact-container {
+			.text {
+				text-align: center;
+			}
 
-			.text{text-align:center;}
+			.form-container {
+				width: 80%;
 
-			.form-container{
-				width:80%;
-				
-				.form-start-container{
+				.form-start-container {
 					justify-content: space-between;
 
-					.name-container{
-						display:flex;
+					.name-container {
+						display: flex;
 						align-items: flex-start;
 						flex-direction: column;
-						width:48%;
+						width: 48%;
 					}
 
-					.email-container{
-						display:flex;
+					.email-container {
+						display: flex;
 						align-items: flex-end;
 						flex-direction: column;
-						width:48%;
+						width: 48%;
 
-						.field-name{
+						.field-name {
 							align-self: flex-start;
 						}
 					}
 				}
 
-				.submit-button{
-					width:50%;
+				.submit-button {
+					width: 50%;
 				}
 			}
 		}
 	}
 }
 
-@media only screen and (min-width:1800px){
-	 	
+@media only screen and (min-width: 1800px) {
 	/*=====================
 	=  HEADER 		  	  =
 	=====================*/
-	header{
-		height:80px;
-		nav{
-			height:80px;
-			ul{
-				li{
-					font-size:16pt;
-					padding:30px 10px;
+	header {
+		height: 80px;
+		nav {
+			height: 80px;
+			ul {
+				li {
+					font-size: 16pt;
+					padding: 30px 10px;
 
-					#logo{
-						width:50px;
-						height:50px;
+					#logo {
+						width: 50px;
+						height: 50px;
 					}
 				}
 			}
@@ -1193,13 +1186,13 @@ header{
 	/*=====================
 	=  HOME 		  	  =
 	=====================*/
-	.flex-container{
-		.welcome-text{
+	.flex-container {
+		.welcome-text {
 			font-size: 40pt;
 			line-height: 50pt;
 		}
 
-		.home-button{
+		.home-button {
 			font-size: 30pt;
 		}
 	}
@@ -1207,70 +1200,70 @@ header{
 	/*=====================
 	=  ABOUT 		  	  =
 	=====================*/
-	#about{
-		.about-container{
+	#about {
+		.about-container {
 			flex-direction: row;
 
-			.about-left-container{
-				display:flex;
+			.about-left-container {
+				display: flex;
 				flex-direction: column;
 				justify-content: center;
 
-				.title{
-					font-size:60pt;
+				.title {
+					font-size: 60pt;
 				}
 
-				.short-description{
-					width:80%;
-					font-size:17pt;
-					margin-top:30px;
+				.short-description {
+					width: 80%;
+					font-size: 17pt;
+					margin-top: 30px;
 				}
 
-				.ic-but-container{
-					width:70%;
-					margin-top:30px;
-					display:flex;
+				.ic-but-container {
+					width: 70%;
+					margin-top: 30px;
+					display: flex;
 					flex-direction: row;
 					align-items: center;
 					justify-content: space-between;
-					
-					.icon-container{
-						margin-top:30px;
 
-						.icon{
-							svg{
-								width:60px;
-								height:60px;
+					.icon-container {
+						margin-top: 30px;
+
+						.icon {
+							svg {
+								width: 60px;
+								height: 60px;
 							}
 						}
 					}
 
-					.about-button{
-						width:35%;
-						padding:20px 35px;
+					.about-button {
+						width: 35%;
+						padding: 20px 35px;
 						font-size: 20pt;
 					}
 				}
 			}
 
-			.about-right-container{
-				display:flex;
+			.about-right-container {
+				display: flex;
 				flex-direction: column;
 				justify-content: center;
-	
-				.title{
-					font-size:60pt;
+
+				.title {
+					font-size: 60pt;
 				}
 
-				.skills-container{
-					width:90%;
+				.skills-container {
+					width: 90%;
 
-					.skill-title{
-						font-size:20pt;
+					.skill-title {
+						font-size: 20pt;
 					}
 
-					.skill{
-						font-size:13pt;
+					.skill {
+						font-size: 13pt;
 					}
 				}
 			}
@@ -1280,55 +1273,54 @@ header{
 	/*=====================
 	=  PORTFOLIO	  	  =
 	=====================*/
-	#portfolio{
-
-		.portfolio-container{
-
-			.title{
-				font-size:35pt;
-				margin-top:120px;
+	#portfolio {
+		.portfolio-container {
+			.title {
+				font-size: 35pt;
+				margin-top: 120px;
 			}
 
-			.line-white-short{
-				height:5px;
-				width:4%;
-				margin-top:30px;
+			.line-white-short {
+				height: 5px;
+				width: 4%;
+				margin-top: 30px;
 			}
 
-			.portfolio-item{
-				margin-top:50px;
+			.portfolio-item {
+				margin-top: 50px;
 
-				.item-image-container{
-					width:520px;
-					height:280px;
+				.item-image-container {
+					width: 520px;
+					height: 280px;
 				}
 
-				.item-details{
-					width:55%;
+				.item-details {
+					width: 55%;
 
-					.item-title{
-						font-size:25pt;
+					.item-title {
+						font-size: 25pt;
 					}
 
-					.line-white-short{
-						margin-top:10px;
-						width:6%;
+					.line-white-short {
+						margin-top: 10px;
+						width: 6%;
 					}
 
-					.item-description{
-						width:80%;
-						font-size:15pt;
+					.item-description {
+						width: 80%;
+						font-size: 15pt;
 						line-height: 20pt;
-						margin-top:15px;
+						margin-top: 15px;
 					}
 
-					.button-container{
-						width:50%;
+					.button-container {
+						width: 50%;
 						justify-content: space-between;
 
-						.sourceCode-button, .preview-button{
-							font-size:16pt;
-							padding:15px 30px;
+						.sourceCode-button,
+						.preview-button {
+							font-size: 16pt;
+							padding: 15px 30px;
 						}
 					}
 				}
@@ -1338,98 +1330,92 @@ header{
 	/*=====================
 	=  CONTACT	  		  =
 	=====================*/
-	#contact{
-
-		.contact-container{
-			
-			.title{
-				margin-top:120px;
+	#contact {
+		.contact-container {
+			.title {
+				margin-top: 120px;
 				font-size: 35pt;
 			}
-			
-			.line-white-short{
-				height:5px;
-				width:4%;
+
+			.line-white-short {
+				height: 5px;
+				width: 4%;
 			}
 
-			.text{
+			.text {
 				font-size: 18pt;
 			}
 
-			.form-container{
-				width:50%;
-				
-				.form-start-container{
+			.form-container {
+				width: 50%;
+
+				.form-start-container {
 					justify-content: space-between;
 
-					.name-container, .email-container{
-						display:flex;
+					.name-container,
+					.email-container {
+						display: flex;
 						align-items: flex-start;
 						flex-direction: column;
-						width:48%;
-						font-size:17pt;
+						width: 48%;
+						font-size: 17pt;
 					}
-					
-					.email-container{
 
-						.field-name{
+					.email-container {
+						.field-name {
 							align-self: flex-start;
 						}
 					}
 
-
-					input{
-						height:60px;
-						font-size:17pt;
+					input {
+						height: 60px;
+						font-size: 17pt;
 					}
 				}
 
-				.submit-button{
-					width:30%;
-					padding:20px 30px;
-					font-size:15pt;
+				.submit-button {
+					width: 30%;
+					padding: 20px 30px;
+					font-size: 15pt;
 				}
 
-				textarea{
-					height:300px;
+				textarea {
+					height: 300px;
 				}
 			}
 
-			.field-name{
-				font-size:17pt;
+			.field-name {
+				font-size: 17pt;
 			}
-
-
 		}
 	}
 
-	#footer{
-		height:80px;
+	#footer {
+		height: 80px;
 
-		span{
-			font-size:20pt;
+		span {
+			font-size: 20pt;
 		}
 	}
 }
 
-@media only screen and (min-width:2400px){
-	 	
+@media only screen and (min-width: 2400px) {
 	/*=====================
 	=  HEADER 		  	  =
 	=====================*/
-	header{
-		height:100px;
-		nav{
-			height:100px;
-			border-bottom-width:6px;
-			ul{
-				li{
-					font-size:21pt;
-					padding:32px 12px;
+	header {
+		height: 100px;
+		nav {
+			height: 100px;
+			border-bottom-width: 6px;
+			ul {
+				li {
+					font-size: 21pt;
+					padding: 32px 12px;
 
-					#logo{
-						width:55px;
-						height:55px;
+					#logo {
+						width: 55px;
+						height: 55px;
 					}
 				}
 			}
@@ -1439,13 +1425,13 @@ header{
 	/*=====================
 	=  HOME 		  	  =
 	=====================*/
-	.flex-container{
-		.welcome-text{
+	.flex-container {
+		.welcome-text {
 			font-size: 70pt;
 			line-height: 80pt;
 		}
 
-		.home-button{
+		.home-button {
 			font-size: 50pt;
 			border-width: 5px;
 		}
@@ -1454,72 +1440,72 @@ header{
 	/*=====================
 	=  ABOUT 		  	  =
 	=====================*/
-	#about{
-		.about-container{
+	#about {
+		.about-container {
 			flex-direction: row;
-			width:90%;
+			width: 90%;
 
-			.about-left-container{
-				display:flex;
+			.about-left-container {
+				display: flex;
 				flex-direction: column;
 				justify-content: center;
-				border-right-width:1.2px;
+				border-right-width: 1.2px;
 
-				.title{
-					font-size:90pt;
+				.title {
+					font-size: 90pt;
 				}
 
-				.short-description{
-					width:80%;
-					font-size:25pt;
-					margin-top:30px;
+				.short-description {
+					width: 80%;
+					font-size: 25pt;
+					margin-top: 30px;
 				}
 
-				.ic-but-container{
-					width:80%;
-					margin-top:30px;
-					display:flex;
+				.ic-but-container {
+					width: 80%;
+					margin-top: 30px;
+					display: flex;
 					flex-direction: row;
 					align-items: center;
 					justify-content: space-between;
-					
-					.icon-container{
-						margin-top:30px;
 
-						.icon{
-							svg{
-								width:80px;
-								height:80px;
+					.icon-container {
+						margin-top: 30px;
+
+						.icon {
+							svg {
+								width: 80px;
+								height: 80px;
 							}
 						}
 					}
 
-					.about-button{
-						width:35%;
-						padding:28px 45px;
+					.about-button {
+						width: 35%;
+						padding: 28px 45px;
 						font-size: 20pt;
 					}
 				}
 			}
 
-			.about-right-container{
-				display:flex;
+			.about-right-container {
+				display: flex;
 				flex-direction: column;
 				justify-content: center;
-	
-				.title{
-					font-size:80pt;
+
+				.title {
+					font-size: 80pt;
 				}
 
-				.skills-container{
-					width:90%;
+				.skills-container {
+					width: 90%;
 
-					.skill-title{
-						font-size:30pt;
+					.skill-title {
+						font-size: 30pt;
 					}
 
-					.skill{
-						font-size:20pt;
+					.skill {
+						font-size: 20pt;
 					}
 				}
 			}
@@ -1529,58 +1515,57 @@ header{
 	/*=====================
 	=  PORTFOLIO	  	  =
 	=====================*/
-	#portfolio{
-
-		.portfolio-container{
-
-			.title{
-				font-size:55pt;
-				margin-top:150px;
+	#portfolio {
+		.portfolio-container {
+			.title {
+				font-size: 55pt;
+				margin-top: 150px;
 			}
 
-			.line-white-short{
-				height:7px;
-				width:4%;
-				margin-top:50px;
+			.line-white-short {
+				height: 7px;
+				width: 4%;
+				margin-top: 50px;
 			}
 
-			.portfolio-item{
-				margin-top:70px;
+			.portfolio-item {
+				margin-top: 70px;
 
-				.item-image-container{
-					width:720px;
-					height:380px;
+				.item-image-container {
+					width: 720px;
+					height: 380px;
 				}
 
-				.item-details{
-					width:50%;
+				.item-details {
+					width: 50%;
 
-					.item-title{
-						font-size:38pt;
+					.item-title {
+						font-size: 38pt;
 					}
 
-					.line-white-short{
-						margin-top:10px;
-						width:6%;
+					.line-white-short {
+						margin-top: 10px;
+						width: 6%;
 					}
 
-					.item-description{
-						width:80%;
-						font-size:20pt;
+					.item-description {
+						width: 80%;
+						font-size: 20pt;
 						line-height: 20pt;
-						margin-top:15px;
+						margin-top: 15px;
 					}
 
-					.button-container{
-						width:65%;
+					.button-container {
+						width: 65%;
 
-						.sourceCode-button, .preview-button{
-							font-size:20pt;
-							padding:23px 38px;
+						.sourceCode-button,
+						.preview-button {
+							font-size: 20pt;
+							padding: 23px 38px;
 						}
 
-						.preview-button{
-							margin-left:200px;
+						.preview-button {
+							margin-left: 200px;
 						}
 					}
 				}
@@ -1590,78 +1575,73 @@ header{
 	/*=====================
 	=  CONTACT	  		  =
 	=====================*/
-	#contact{
-
-		.contact-container{
-			
-			.title{
-				margin-top:140px;
+	#contact {
+		.contact-container {
+			.title {
+				margin-top: 140px;
 				font-size: 55pt;
 			}
-			
-			.line-white-short{
-				height:8px;
-				width:4%;
-				margin-top:30px;
+
+			.line-white-short {
+				height: 8px;
+				width: 4%;
+				margin-top: 30px;
 			}
 
-			.text{
+			.text {
 				font-size: 23pt;
-				margin-top:35px;
+				margin-top: 35px;
 			}
 
-			.form-container{
-				width:50%;
-				
-				.form-start-container{
+			.form-container {
+				width: 50%;
+
+				.form-start-container {
 					justify-content: space-between;
 
-					.name-container, .email-container{
-						display:flex;
+					.name-container,
+					.email-container {
+						display: flex;
 						align-items: flex-start;
 						flex-direction: column;
-						width:48%;
+						width: 48%;
 					}
-					
-					.email-container{
 
-						.field-name{
+					.email-container {
+						.field-name {
 							align-self: flex-start;
 						}
 					}
 
-
-					input{
-						height:80px;
-						font-size:20pt;
+					input {
+						height: 80px;
+						font-size: 20pt;
 					}
 				}
 
-				.submit-button{
-					width:30%;
-					padding:23px 30px;
-					font-size:20pt;
+				.submit-button {
+					width: 30%;
+					padding: 23px 30px;
+					font-size: 20pt;
 				}
 
-				textarea{
-					height:500px;
-					font-size:20pt;
+				textarea {
+					height: 500px;
+					font-size: 20pt;
 				}
 			}
 
-			.field-name{
-				font-size:23pt;
+			.field-name {
+				font-size: 23pt;
 			}
-
-
 		}
 	}
 
-	#footer{
-		height:120px;
+	#footer {
+		height: 120px;
 
-		span{
-			font-size:25pt;
+		span {
+			font-size: 25pt;
 		}
 	}
 }
@@ -1669,39 +1649,33 @@ header{
   FONT-FACE   			  =
 ==========================*/
 
-@font-face{
+@font-face {
 	font-family: Poly;
 	src: url(../Fonts/Poly-Regular.otf);
 }
 
-
-@font-face{
+@font-face {
 	font-family: Raleway;
 	font-weight: normal;
 	src: url(../Fonts/Raleway-Regular.ttf);
 }
 
-@font-face{
+@font-face {
 	font-family: Raleway;
 	font-weight: bold;
 	src: url(../Fonts/Raleway-SemiBold.ttf);
 }
 
-@font-face{
+@font-face {
 	font-family: Raleway;
 	font-weight: bolder;
 	src: url(../Fonts/Raleway-ExtraBold.ttf);
 }
 
-@font-face{
+@font-face {
 	font-family: Raleway;
 	font-weight: lighter;
 	src: url(../Fonts/Raleway-Light.ttf);
 }
 
-
-
-
-
 /************************************************************/
-
