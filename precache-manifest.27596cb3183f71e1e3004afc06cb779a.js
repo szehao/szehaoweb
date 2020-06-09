@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a689b1e59e6d0917fb1c03fddf724140",
+    "revision": "e442bb7ee0e97391a69b8298e8ee7434",
     "url": "/szehaoweb/index.html"
   },
   {
-    "revision": "b08e29aace737a61fe5b",
+    "revision": "84e01b49f4f2739c8b75",
     "url": "/szehaoweb/static/css/main.257cf532.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/szehaoweb/static/js/2.a085522c.chunk.js"
   },
   {
-    "revision": "b08e29aace737a61fe5b",
-    "url": "/szehaoweb/static/js/main.6d93e3ca.chunk.js"
+    "revision": "84e01b49f4f2739c8b75",
+    "url": "/szehaoweb/static/js/main.b829a437.chunk.js"
   },
   {
     "revision": "96f30b7e0a2c5688ee44",
